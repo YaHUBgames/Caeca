@@ -1,0 +1,18 @@
+{
+    "name": "Caeca.CustomEditors",
+    "rootNamespace": "Caeca.CustomEditors",
+    "references": [
+        "GUID:dc9d02b213a12314c9068c7a679975c2"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,80 @@
+{
+    "name": "PlayerInput",
+    "maps": [
+        {
+            "name": "Base",
+            "id": "c21e53e7-20f9-44c2-ab53-c974f57e4f96",
+            "actions": [
+                {
+                    "name": "DirectOrient",
+                    "type": "Button",
+                    "id": "723c3c94-fbff-4eac-9b33-51989f0902f0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SetSonar",
+                    "type": "Button",
+                    "id": "239a5e95-401e-4135-bb2b-dbcb43281626",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ShowSonar",
+                    "type": "Button",
+                    "id": "ce7e94a6-ed3c-46da-b3ed-ba82d6e01e12",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c8f470a2-be82-44cb-b854-6bf8fec4df70",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyMouse",
+                    "action": "DirectOrient",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2c17dc90-469c-4444-a7f2-d61894b5354f",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyMouse",
+                    "action": "SetSonar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e727d1e2-cb1c-4fc9-af1a-a13abf7ddad9",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyMouse",
+                    "action": "ShowSonar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "KeyMouse",
+            "bindingGroup": "KeyMouse",
+            "devices": []
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Caeca.GeneralOrientation",
+    "rootNamespace": "Caeca.GeneralOrientation",
+    "references": [
+        "GUID:f203098182a15de4ba9a6e3a6801d8c3",
+        "GUID:e814a8df81d6e5f42b0e4f386955afff"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

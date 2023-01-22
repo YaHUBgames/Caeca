@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+namespace Caeca.CustomEditors
+{
+    /// <summary>
+    /// Usefull editor functions.
+    /// </summary>
+    public static class EditorDrawSnippets
+    {
+        /// <summary>
+        /// Draws simple line.
+        /// </summary>
+        /// <param name="color"></param>
+        /// <param name="thickness"></param>
+        /// <param name="padding"></param>
+        public static void DrawUILine(Color color, int thickness = 2, int padding = 10)
+        {
+            Rect r = EditorGUILayout.GetControlRect(GUILayout.Height(padding + thickness));
+            r.height = thickness;
+            r.y += padding / 2;
+            r.x -= 2;
+            r.width += 6;
+            EditorGUI.DrawRect(r, color);
+        }
+    }
+}
