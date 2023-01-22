@@ -10,24 +10,16 @@ namespace Caeca.TransformMovement
     public class FollowTransform : MonoBehaviour, GenericInterface<Transform>
     {
         [Header("Settings")]
-        [SerializeField, Tooltip("Use Transform interface to change this.")] 
+        [SerializeField, Tooltip("Use Transform interface to change this.")]
         private Transform followTransform;
-        [SerializeField, Tooltip("Transform to move")] 
+
+        [SerializeField, Tooltip("Transform to move")]
         private Transform moveTransform;
 
-        [Tooltip("What part of transform.position to follow")]
+
         [HideInInspector] public bool[] followPosition = new bool[3];
-        [Tooltip("What part of transform.eulerAngles to follow")]
         [HideInInspector] public bool[] followRotation = new bool[3];
 
-        /// <summary>
-        /// Changes the transform to follow
-        /// </summary>
-        /// <param name="value">Follow new target</param>
-        public void TriggerInterface(Transform value)
-        {
-            followTransform = value;
-        }
 
         private void Update()
         {
@@ -37,6 +29,16 @@ namespace Caeca.TransformMovement
             moveTransform.rotation = Quaternion.Euler(followRotation[0] ? followTransform.eulerAngles.x : moveTransform.eulerAngles.x,
                 followRotation[1] ? followTransform.eulerAngles.y : moveTransform.eulerAngles.y,
                 followRotation[2] ? followTransform.eulerAngles.z : moveTransform.eulerAngles.z);
+        }
+
+
+        /// <summary>
+        /// Changes the transform to follow
+        /// </summary>
+        /// <param name="value">Follow new target</param>
+        public void TriggerInterface(Transform value)
+        {
+            followTransform = value;
         }
     }
 }

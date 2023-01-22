@@ -6,13 +6,10 @@ using Caeca.ScriptableObjects;
 namespace Caeca.SoundControl
 {
     /// <summary>
-    /// Sets volume to array of audio sources according to the information received in interface.
+    /// Sets volume to array of audio sources according to the information received in (float[], float, float) or (float) interface.
     /// </summary>
     public class OrientationSoundVolume : MonoBehaviour, GenericInterface<float[], float, float>, GenericInterface<float>
     {
-        private float[] volume;
-        private float[] currentVolume;
-
         [Header("Control")]
         [Tooltip("Controls if the sound should loop or not")]
         [SerializeField] private BoolSO doPlay = default;
@@ -37,31 +34,9 @@ namespace Caeca.SoundControl
         [SerializeField] private AudioSource[] audioSources;
 
 
-        /// <summary>
-        /// Receive volume information.
-        /// </summary>
-        /// <param name="value1">Unmaped values.</param>
-        /// <param name="value2">Max value.</param>
-        /// <param name="value3">Shift value.</param>
-        public void TriggerInterface(float[] value1, float value2, float value3)
-        {
-            for (int i = 0; i < audioSources.Length; i++)
-            {
-                volume[i] = Mathf.Clamp(((reverseVolume ? value1[i] + value3 : value2 - (value1[i] + value3)) / value2), 0f, maxVolume);
-                if (volume[i] < cutOffVolume)
-                    volume[i] = 0;
-            }
-        }
+        private float[] volume;
+        private float[] currentVolume;
 
-        /// <summary>
-        /// Direct alternative to volume information
-        /// </summary>
-        /// <param name="value">New volume for all audio sources</param>
-        public void TriggerInterface(float value)
-        {
-            for (int i = 0; i < audioSources.Length; i++)
-                volume[i] = Mathf.Clamp(value, 0, 1);
-        }
 
         private void Awake()
         {
@@ -95,6 +70,7 @@ namespace Caeca.SoundControl
             }
         }
 
+
         public void OnControlChange(bool _doPlay)
         {
             if (!_doPlay)
@@ -104,6 +80,33 @@ namespace Caeca.SoundControl
                 currentVolume[i] = startVolume;
                 audioSources[i].volume = currentVolume[i];
             }
+        }
+
+
+        /// <summary>
+        /// Receive volume information.
+        /// </summary>
+        /// <param name="value1">Unmaped values.</param>
+        /// <param name="value2">Max value.</param>
+        /// <param name="value3">Shift value.</param>
+        public void TriggerInterface(float[] value1, float value2, float value3)
+        {
+            for (int i = 0; i < audioSources.Length; i++)
+            {
+                volume[i] = Mathf.Clamp(((reverseVolume ? value1[i] + value3 : value2 - (value1[i] + value3)) / value2), 0f, maxVolume);
+                if (volume[i] < cutOffVolume)
+                    volume[i] = 0;
+            }
+        }
+
+        /// <summary>
+        /// Direct alternative to volume information
+        /// </summary>
+        /// <param name="value">New volume for all audio sources</param>
+        public void TriggerInterface(float value)
+        {
+            for (int i = 0; i < audioSources.Length; i++)
+                volume[i] = Mathf.Clamp(value, 0, 1);
         }
     }
 }

@@ -54,7 +54,7 @@ namespace Caeca.GeneralOrientation
         private void OnValidate()
         {
             foreach (InterfaceObject<GenericInterface<float[], float, float>> interfaceObject in orientationVolume)
-                interfaceObject.OnValidate();
+                interfaceObject.OnValidate(this);
         }
 
         private void Awake()
@@ -66,6 +66,7 @@ namespace Caeca.GeneralOrientation
         {
             StartCoroutine(CheckRays());
         }
+
 
         private IEnumerator CheckRays()
         {

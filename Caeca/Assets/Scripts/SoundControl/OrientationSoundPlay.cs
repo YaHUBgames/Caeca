@@ -7,7 +7,7 @@ using Caeca.ScriptableObjects;
 namespace Caeca.SoundControl
 {
     /// <summary>
-    /// Plays array of loopable sounds.
+    /// Plays array of loopable sounds with delay from (float) interface. 
     /// </summary>
     public class OrientationSoundPlay : MonoBehaviour, GenericInterface<float>
     {
@@ -25,27 +25,20 @@ namespace Caeca.SoundControl
         [SerializeField, Tooltip("<bool> -> Every sound beat triggers with true")]
         private InterfaceObject<GenericInterface<bool>>[] soundBeat;
 
-        /// <summary>
-        /// Changes to clip length
-        /// </summary>
-        /// <param name="value">New clip length</param>
-        public void TriggerInterface(float value)
-        {
-            clipLenth = value;
-        }
 
         private void OnValidate()
         {
-            if(soundBeat == null)
+            if (soundBeat == null)
                 return;
             foreach (InterfaceObject<GenericInterface<bool>> interfaceObject in soundBeat)
-                interfaceObject.OnValidate();
+                interfaceObject.OnValidate(this);
         }
 
         private void Start()
         {
             StartCoroutine(PlayOrientationSounds());
         }
+
 
         private IEnumerator PlayOrientationSounds()
         {
@@ -55,10 +48,20 @@ namespace Caeca.SoundControl
                 yield return new WaitUntil(() => doPlay.value);
                 for (int i = 0; i < audioSources.Length; i++)
                     audioSources[i].PlayOneShot(audioSources[i].clip);
-                if(soundBeat != null)
+                if (soundBeat != null)
                     foreach (InterfaceObject<GenericInterface<bool>> interfaceObject in soundBeat)
                         interfaceObject.intrfs.TriggerInterface(true);
             }
+        }
+
+
+        /// <summary>
+        /// Changes to clip length
+        /// </summary>
+        /// <param name="value">New clip length</param>
+        public void TriggerInterface(float value)
+        {
+            clipLenth = value;
         }
     }
 }

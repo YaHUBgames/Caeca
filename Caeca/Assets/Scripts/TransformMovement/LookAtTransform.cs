@@ -10,10 +10,18 @@ namespace Caeca.TransformMovement
     public class LookAtTransform : MonoBehaviour, GenericInterface<Transform>
     {
         [Header("Settings")]
-        [SerializeField, Tooltip("Use Transform interface to change this.")] 
+        [SerializeField, Tooltip("Use Transform interface to change this.")]
         private Transform lookAtTransform;
-        [SerializeField, Tooltip("Transform to move")] 
+
+        [SerializeField, Tooltip("Transform to move")]
         private Transform moveTransform;
+
+
+        private void Update()
+        {
+            moveTransform.LookAt(lookAtTransform, Vector3.up);
+        }
+
 
         /// <summary>
         /// Changes the look at transform
@@ -22,11 +30,6 @@ namespace Caeca.TransformMovement
         public void TriggerInterface(Transform value)
         {
             lookAtTransform = value;
-        }
-
-        private void Update()
-        {
-            moveTransform.LookAt(lookAtTransform, Vector3.up);
         }
     }
 }

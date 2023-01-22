@@ -7,7 +7,7 @@ using Caeca.DebugSystems;
 namespace Caeca.GeneralOrientation
 {
     /// <summary>
-    /// Check if orientTransform is looking at target Transform.
+    /// Check if orientTransform is looking at target Transform. Use Transform interface to change target Transform.
     /// </summary>
     public class LookAtOrientation : MonoBehaviour, GenericInterface<Transform>
     {
@@ -29,30 +29,17 @@ namespace Caeca.GeneralOrientation
         [SerializeField] private DebugLogger logger;
 
 
-        /// <summary>
-        /// Changes the target transform
-        /// </summary>
-        /// <param name="value">New look at target</param>
-        public void TriggerInterface(Transform value)
-        {
-            if (value == null)
-            {
-                target = orientTransform;
-                return;
-            }
-            target = value;
-        }
-
         private void OnValidate()
         {
             foreach (InterfaceObject<GenericInterface<float>> interfaceObject in lookAtLevel)
-                interfaceObject.OnValidate();
+                interfaceObject.OnValidate(this);
         }
 
         private void Start()
         {
             StartCoroutine(CheckTarget());
         }
+
 
         private IEnumerator CheckTarget()
         {
@@ -70,6 +57,21 @@ namespace Caeca.GeneralOrientation
                 yield return new WaitForEndOfFrame();
                 yield return new WaitWhile(() => target == orientTransform);
             }
+        }
+
+
+        /// <summary>
+        /// Changes the target transform
+        /// </summary>
+        /// <param name="value">New look at target</param>
+        public void TriggerInterface(Transform value)
+        {
+            if (value == null)
+            {
+                target = orientTransform;
+                return;
+            }
+            target = value;
         }
     }
 }
