@@ -15,16 +15,25 @@ namespace Caeca.SoundControl
         public event SoundTick OnSoundTick;
 
         public delegate void SoundFocus();
-        public event SoundFocus OnSoundWhenFocusedOnDifferent;
-        public event SoundFocus OnSoundWhenUnFocused;
+        public event SoundFocus BasicSoundWhenFocused;
+        public event SoundFocus BasicSoundWhenUnFocused;
 
-        private List<ISoundEmitting> emitters = new List<ISoundEmitting>();
+        private List<ISoundEmitting> focusableEmitters = new List<ISoundEmitting>();
 
         [SerializeField] private int index = -1;
 
-        public void SoundEmiterDied(ISoundEmitting _soundEmitter)
+        public void SoundEmiterDied(ISoundEmitting _soundEmitter, bool _focusable)
         {
             OnSoundTick -= _soundEmitter.TickSoundEmitor;
+            if (!_focusable)
+            {
+                BasicSoundWhenFocused -= _soundEmitter.UnfocusSound;
+                BasicSoundWhenUnFocused -= _soundEmitter.FocusSound;
+            }
+            else
+            {
+                focusableEmitters.Remove(_soundEmitter);
+            }
         }
 
         private void Start()
@@ -40,16 +49,18 @@ namespace Caeca.SoundControl
                 ISoundEmitting emittor = collider.GetComponent<ISoundEmitting>();
                 if (emittor == null)
                     continue;
+                if (emittor.IsActive())
+                    continue;
 
                 bool focusable = emittor.ActivateSoundEmitor(this);
                 if (focusable)
                 {
-                    emitters.Add(emittor);
+                    focusableEmitters.Add(emittor);
                 }
                 else
                 {
-                    OnSoundWhenFocusedOnDifferent += emittor.FocusedOnDifferentSound;
-                    OnSoundWhenUnFocused += emittor.Unfocus;
+                    BasicSoundWhenFocused += emittor.UnfocusSound;
+                    BasicSoundWhenUnFocused += emittor.FocusSound;
                 }
 
                 OnSoundTick += emittor.TickSoundEmitor;
@@ -63,23 +74,24 @@ namespace Caeca.SoundControl
 
             if (index >= 0)
                 Focus();
-            else{
-                foreach (ISoundEmitting emitter in emitters)
-                    emitter.Unfocus();
-                OnSoundWhenUnFocused?.Invoke();
+            else
+            {
+                foreach (ISoundEmitting emitter in focusableEmitters)
+                    emitter.FocusSound();
+                BasicSoundWhenUnFocused?.Invoke();
             }
-    
-            OnSoundTick?.Invoke(1f);
-            
+
+            OnSoundTick?.Invoke(2f);
+
             StartCoroutine(SlowUpdate());
         }
 
         private void Focus()
         {
-            OnSoundWhenFocusedOnDifferent?.Invoke();
-            foreach (ISoundEmitting emitter in emitters)
-                emitter.FocusedOnDifferentSound();
-            emitters[index].FocusOnSound();
+            BasicSoundWhenFocused?.Invoke();
+            foreach (ISoundEmitting emitter in focusableEmitters)
+                emitter.UnfocusSound();
+            focusableEmitters[index].FocusSound();
         }
     }
 }

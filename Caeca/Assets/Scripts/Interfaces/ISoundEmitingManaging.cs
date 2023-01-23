@@ -2,17 +2,18 @@ namespace Caeca.Interfaces
 {
     public interface ISoundEmitting
     {
+        public bool IsActive();
+        
         public bool ActivateSoundEmitor(ISoundManaging _manager);
         public void TickSoundEmitor(float _deltaTime);
-        public void DeactivateSoundEmitor();
+        public bool DeactivateSoundEmitor();
 
-        public void FocusOnSound();
-        public void FocusedOnDifferentSound();
-        public void Unfocus();
+        public void FocusSound();
+        public void UnfocusSound();
     }
 
     public interface ISoundManaging
     {
-        public void SoundEmiterDied(ISoundEmitting _soundEmitter);
+        public void SoundEmiterDied(ISoundEmitting _soundEmitter, bool _focusable);
     }
 }

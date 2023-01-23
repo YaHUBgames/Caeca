@@ -1,67 +1,69 @@
-using System.Collections;
 using UnityEngine;
 
 using Caeca.Interfaces;
-using Caeca.DebugSystems;
 
 namespace Caeca.SoundControl
 {
+    /// <summary>
+    /// Class that handles events that determine sound behaviour like focus and tick events.
+    /// </summary>
     public class SoundEmitter : MonoBehaviour, ISoundEmitting
     {
         [SerializeField] private bool focusable = false;
+        [SerializeField] private SoundPlayer soundPlayer;
+
+
         private bool isActive = false;
         private ISoundManaging manager;
 
-        [SerializeField] private AudioSource source;
-        [SerializeField] private Collider soundCollider;
 
-        private void OnDestroy() {
-            manager?.SoundEmiterDied((ISoundEmitting)this);
+        private void OnDestroy()
+        {
+            manager?.SoundEmiterDied((ISoundEmitting)this, focusable);
             isActive = false;
-            source.enabled = isActive;
-            soundCollider.enabled = !isActive;
+        }
+
+
+        private void SetVolume(float _volume)
+        {
+            soundPlayer.ChangeVolume(_volume);
+        }
+
+
+        public bool IsActive()
+        {
+            return isActive;
         }
 
         public bool ActivateSoundEmitor(ISoundManaging _manager)
         {
             isActive = true;
-            source.enabled = isActive;
-            soundCollider.enabled = !isActive;
             manager = _manager;
+            SetVolume(1);
             return focusable;
         }
 
-        public void DeactivateSoundEmitor()
+        public bool DeactivateSoundEmitor()
         {
             isActive = false;
-            source.enabled = isActive;
-            soundCollider.enabled = !isActive;
             manager = null;
+            SetVolume(0);
+            return focusable;
         }
 
         public void TickSoundEmitor(float _deltaTime)
         {
-            StartCoroutine(play());
+            soundPlayer.TickSound(_deltaTime);
         }
 
-        IEnumerator play(){
-            yield return new WaitForSeconds(Random.Range(0f,0.5f));
-            source.PlayOneShot(source.clip);
-        }
-
-        public void FocusOnSound()
+        public void FocusSound()
         {
-            source.volume = 1;
+            SetVolume(1);
         }
 
-        public void FocusedOnDifferentSound()
+        public void UnfocusSound()
         {
-            source.volume = 0;
-        }
-
-        public void Unfocus()
-        {
-            source.volume = 1;
+            SetVolume(0);
         }
     }
 }
