@@ -22,6 +22,7 @@ namespace Caeca
 
         private void Awake() {
             boolSO.OnVarSync += ShowBool;
+            boolSO.OnVarSync += null;
         }
 
         private void OnDestroy() {

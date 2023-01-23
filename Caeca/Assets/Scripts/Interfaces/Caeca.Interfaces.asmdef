@@ -1,7 +1,9 @@
 {
     "name": "Interfaces",
     "rootNamespace": "Caeca.Interfaces",
-    "references": [],
+    "references": [
+        "GUID:e814a8df81d6e5f42b0e4f386955afff"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

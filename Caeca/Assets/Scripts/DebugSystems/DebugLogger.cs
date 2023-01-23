@@ -16,6 +16,7 @@ namespace Caeca.DebugSystems
             showLogError = !showLog;
             showLogWarning = !showLog;
             showLog = !showLog;
+            showDebugDraws = !showLog;
         }
 
         [ContextMenu("Show debug logs"), UnityEngine.Tooltip("Turn on this debug loggger.")]
@@ -24,6 +25,7 @@ namespace Caeca.DebugSystems
             showLogError = true;
             showLogWarning = true;
             showLog = true;
+            showDebugDraws = true;
         }
 
         [ContextMenu("Show debug logs"), UnityEngine.Tooltip("Turn off this debug loggger.")]
@@ -32,6 +34,7 @@ namespace Caeca.DebugSystems
             showLogError = false;
             showLogWarning = false;
             showLog = false;
+            showDebugDraws = false;
         }
 
         /// <summary>Controls whether or not Basic debug messages are logged.</summary>

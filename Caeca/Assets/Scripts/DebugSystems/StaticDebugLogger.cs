@@ -2,8 +2,14 @@ using UnityEngine;
 
 namespace Caeca.DebugSystems
 {
-    public class StaticDebugLogger : MonoBehaviour
+    public class StaticDebugLogger
     {
-        
+        public static DebugLogger logger;
+
+        static StaticDebugLogger()
+        {
+            logger = (DebugLogger)ScriptableObject.CreateInstance(typeof(DebugLogger));
+            logger.ShowAllLogs();
+        }
     }
 }
