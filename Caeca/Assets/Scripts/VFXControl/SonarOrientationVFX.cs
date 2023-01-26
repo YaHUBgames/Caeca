@@ -33,6 +33,8 @@ namespace Caeca.vfxControl
         {
             nameID1 = Shader.PropertyToID("SonarDeg");
             nameID2 = Shader.PropertyToID("OnSonarStart");
+            effect.SetInt("SonarSize", sonarVisualSize);
+            effect.SetFloat("SonarLife", sonarVisualLife);
         }
         
 

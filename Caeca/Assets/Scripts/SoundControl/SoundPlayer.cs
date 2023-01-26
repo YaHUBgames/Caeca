@@ -1,50 +1,38 @@
-using System.Collections;
 using UnityEngine;
+
+using Caeca.Interfaces;
 
 namespace Caeca.SoundControl
 {
     /// <summary>
-    /// Class that is controling the audioSource. Changes volume and plays sounds.
+    /// Class that is controling the AudioSource. Changes volume, plays sounds and set if sound can be played with (bool) interface.
     /// </summary>
-    public class SoundPlayer : MonoBehaviour
+    public class SoundPlayer : MonoBehaviour, GenericInterface<bool>
     {
-        [SerializeField] private AudioSource audioSource;
-/*class soundPack - random clip,pich max volume etc*/
+        [Header("References")]
+        [SerializeField, Tooltip("Audio source this scripts controls")]
+        private AudioSource audioSource;
+        [Header("Settings")]
+        [SerializeField, Tooltip("This can be set from outside via <bool> interface")]
+        private bool canPlay = true;
+        [SerializeField, Tooltip("Sound play settings")]
+        private SoundPack soundPack;
 
-        private float volume = 0;
-        private Coroutine volumeTransition = null;
 
-/**/
-        public void TickSound(float _deltaTime)
+        public void Tick(float _deltaTime)
         {
-            StartCoroutine(PlaySound());
+            if(canPlay)
+                soundPack.Tick(audioSource, _deltaTime);
         }
 
-        private IEnumerator PlaySound()
-        {
-            yield return new WaitForSeconds(Random.Range(0, 0.5f));
-            audioSource.PlayOneShot(audioSource.clip);
-        }/**/
 
-        public void ChangeVolume(float _volume)
+        /// <summary>
+        /// Controls if the sound can be played
+        /// </summary>
+        /// <param name="value">Can the sound be played</param>
+        public void TriggerInterface(bool value)
         {
-            if (volumeTransition != null)
-                StopCoroutine(volumeTransition);
-            volumeTransition = StartCoroutine(VolumeTransition(_volume));
-        }
-
-        private IEnumerator VolumeTransition(float _volume)
-        {
-            while (_volume != volume)
-            {
-                yield return new WaitForSeconds(SoundEmittingSettings.volumeTransitionTickLength);
-                float delta = _volume - volume;
-                volume += delta * Time.deltaTime * SoundEmittingSettings.volumeTransitionSpeed;
-                volume = Mathf.Clamp(volume, 0f, 1f);
-                if (delta <= 0.05f)
-                    volume = _volume;
-                audioSource.volume = volume;
-            }
+            canPlay = value;
         }
     }
 }

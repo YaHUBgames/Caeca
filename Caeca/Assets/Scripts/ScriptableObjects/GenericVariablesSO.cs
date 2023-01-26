@@ -11,7 +11,7 @@ namespace Caeca.ScriptableObjects
         /// <summary>Event notifying about change.</summary>
         public event OnEventRaised OnVarSync;
 
-        public virtual void ChangeVariable(Object context = null)
+        public virtual void ChangeVariable()
         {
             OnVarSync?.Invoke();
         }
@@ -29,7 +29,7 @@ namespace Caeca.ScriptableObjects
         public event OnEventRaised OnVarSync;
         public T value { get; private set; }
 
-        public virtual void ChangeVariable(T _value, Object context = null)
+        public virtual void ChangeVariable(T _value)
         {
             if (_value.Equals(value))
                 return;
@@ -51,7 +51,7 @@ namespace Caeca.ScriptableObjects
         public T1 value1 { get; private set; }
         public T2 value2 { get; private set; }
 
-        public virtual void ChangeVariable(T1 _value1, T2 _value2, Object context = null)
+        public virtual void ChangeVariable(T1 _value1, T2 _value2)
         {
             if (_value1.Equals(value1) && _value2.Equals(value2))
                 return;

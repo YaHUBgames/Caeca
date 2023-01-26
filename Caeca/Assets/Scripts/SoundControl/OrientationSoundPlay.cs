@@ -48,7 +48,7 @@ namespace Caeca.SoundControl
                 yield return new WaitUntil(() => doPlay.value);
                 for (int i = 0; i < audioSources.Length; i++)
                     audioSources[i].PlayOneShot(audioSources[i].clip);
-                if (soundBeat != null)
+                if (soundBeat is not null)
                     foreach (InterfaceObject<GenericInterface<bool>> interfaceObject in soundBeat)
                         interfaceObject.intrfs.TriggerInterface(true);
             }

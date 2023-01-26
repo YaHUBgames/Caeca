@@ -9,24 +9,21 @@ namespace Caeca.SoundControl
     /// </summary>
     public class SoundEmitter : MonoBehaviour, ISoundEmitting
     {
-        [SerializeField] private bool focusable = false;
+        [Header("References")]
         [SerializeField] private SoundPlayer soundPlayer;
-
+        [SerializeField] private SoundVolume soundVolume;
+        [Header("Settings")]
+        [SerializeField, Tooltip("Can player focus on this sound")] 
+        private bool focusable = false;
 
         private bool isActive = false;
-        private ISoundManaging manager;
+        private ISoundReceiving manager;
 
 
         private void OnDestroy()
         {
-            manager?.SoundEmiterDied((ISoundEmitting)this, focusable);
+            manager?.EmitterLeft((ISoundEmitting)this, focusable);
             isActive = false;
-        }
-
-
-        private void SetVolume(float _volume)
-        {
-            soundPlayer.ChangeVolume(_volume);
         }
 
 
@@ -35,35 +32,35 @@ namespace Caeca.SoundControl
             return isActive;
         }
 
-        public bool ActivateSoundEmitor(ISoundManaging _manager)
+        public bool ActivateEmitter(ISoundReceiving _manager)
         {
             isActive = true;
             manager = _manager;
-            SetVolume(1);
+            soundVolume.TurnOn();
             return focusable;
         }
 
-        public bool DeactivateSoundEmitor()
+        public bool DeactivateEmitter()
         {
             isActive = false;
             manager = null;
-            SetVolume(0);
+            soundVolume.TurnOff();
             return focusable;
         }
 
-        public void TickSoundEmitor(float _deltaTime)
+        public void Tick(float _deltaTime)
         {
-            soundPlayer.TickSound(_deltaTime);
+            soundPlayer.Tick(_deltaTime);
         }
 
-        public void FocusSound()
+        public void Focus()
         {
-            SetVolume(1);
+            soundVolume.TurnOn();
         }
 
-        public void UnfocusSound()
+        public void Unfocus()
         {
-            SetVolume(0);
+            soundVolume.TurnOff();
         }
     }
 }
