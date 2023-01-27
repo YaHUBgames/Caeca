@@ -6,7 +6,7 @@ namespace Caeca.SoundControl
     public static class SoundEmittingSettings
     {
         public const float volumeTransitionTickLength = 0.02f;
-        public const float volumeTransitionSpeed = 5f;
+        public const float volumeTransitionSpeed = 3f;
 
         public const float volumeTransitionDeltaMin = 0.05f;
     }

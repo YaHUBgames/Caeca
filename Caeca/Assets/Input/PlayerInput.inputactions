@@ -6,7 +6,7 @@
             "id": "c21e53e7-20f9-44c2-ab53-c974f57e4f96",
             "actions": [
                 {
-                    "name": "DirectOrient",
+                    "name": "Orient",
                     "type": "Button",
                     "id": "723c3c94-fbff-4eac-9b33-51989f0902f0",
                     "expectedControlType": "Button",
@@ -15,16 +15,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SetSonar",
-                    "type": "Button",
-                    "id": "239a5e95-401e-4135-bb2b-dbcb43281626",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ShowSonar",
+                    "name": "Sonar",
                     "type": "Button",
                     "id": "ce7e94a6-ed3c-46da-b3ed-ba82d6e01e12",
                     "expectedControlType": "Button",
@@ -59,18 +50,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyMouse",
-                    "action": "DirectOrient",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2c17dc90-469c-4444-a7f2-d61894b5354f",
-                    "path": "<Keyboard>/ctrl",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyMouse",
-                    "action": "SetSonar",
+                    "action": "Orient",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -81,7 +61,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyMouse",
-                    "action": "ShowSonar",
+                    "action": "Sonar",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

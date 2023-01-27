@@ -1,8 +1,11 @@
+using UnityEngine;
+
 namespace Caeca.Interfaces
 {
     public interface ISoundEmitting
     {
         public bool IsActive();
+        public Transform GetEmmiter();
         
         public bool ActivateEmitter(ISoundReceiving _manager);
         public bool DeactivateEmitter();

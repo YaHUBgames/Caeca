@@ -1,0 +1,21 @@
+{
+    "name": "Caeca.Control.SoundSystem",
+    "rootNamespace": "Caeca.Control.SoundSystem",
+    "references": [
+        "Interfaces",
+        "Caeca.ScriptableObjects",
+        "DebugSystems",
+        "Caeca.SoundControl",
+        "Unity.InputSystem",
+        "Caeca.Input"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

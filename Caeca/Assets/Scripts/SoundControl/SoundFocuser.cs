@@ -37,6 +37,11 @@ namespace Caeca.SoundControl
         }
 
 
+        public Transform GetCurrentTarget()
+        {
+            return focusableEmitters[focusedIndex].GetEmmiter();
+        }
+
         public void OnControlChange(bool _isFocused)
         {
             if (_isFocused == isFocused)
@@ -84,7 +89,7 @@ namespace Caeca.SoundControl
                 _newFocusedIndex = 0;
             if (_newFocusedIndex < 0)
                 _newFocusedIndex = Mathf.Clamp(focusableEmitters.Count - 1, 0, focusableEmitters.Count);
-            
+
             if (_newFocusedIndex == focusedIndex)
                 return;
 

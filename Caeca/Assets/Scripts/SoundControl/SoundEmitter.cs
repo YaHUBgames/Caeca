@@ -32,6 +32,11 @@ namespace Caeca.SoundControl
             return isActive;
         }
 
+        public Transform GetEmmiter()
+        {
+            return transform;
+        }
+
         public bool ActivateEmitter(ISoundReceiving _manager)
         {
             isActive = true;
