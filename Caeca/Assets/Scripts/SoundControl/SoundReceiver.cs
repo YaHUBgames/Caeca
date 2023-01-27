@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Collections;
 using UnityEngine;
 
 using Caeca.Interfaces;
@@ -7,64 +5,23 @@ using Caeca.DebugSystems;
 
 namespace Caeca.SoundControl
 {
-    //WiP
+    /// <summary>
+    /// It receives the sound emitters that entered these objects, triggers the collider and send information about these to sound focuser and ticker.
+    /// </summary>
     public class SoundReceiver : MonoBehaviour, ISoundReceiving
     {
-        private delegate void SoundTick(float _deltaTime);
-        private event SoundTick OnSoundTick;
+        [Header("References")]
+        [SerializeField] private SoundFocuser soundFocuser;
+        [SerializeField] private SoundTicker soundTicker;
 
-        private delegate void SoundFocus();
-        private event SoundFocus BasicSoundWhenFocused;
-        private event SoundFocus BasicSoundWhenUnFocused;
-
-        public List<ISoundEmitting> focusableEmitters = new List<ISoundEmitting>();
-
+        [Header("Debugging")]
         [SerializeField] private DebugLogger logger;
 
-
-        public void TriggerFocusEvent(bool _isfocused)
-        {
-            if (_isfocused)
-            {
-                BasicSoundWhenFocused?.Invoke();
-                return;
-            }
-            BasicSoundWhenUnFocused?.Invoke();
-        }
-
-        public void TriggerTickEvent(float _deltaTime)
-        {
-            OnSoundTick?.Invoke(_deltaTime);
-        }
-
-        public void EmitterLeft(ISoundEmitting _soundEmitter, bool _focusable)
-        {
-            OnSoundTick -= _soundEmitter.Tick;
-            if (_focusable)
-            {
-                focusableEmitters.Remove(_soundEmitter);
-                return;
-            }
-            BasicSoundWhenFocused -= _soundEmitter.Unfocus;
-            BasicSoundWhenUnFocused -= _soundEmitter.Focus;
-        }
-
-        public void EmitterEntered(ISoundEmitting _soundEmitter, bool _focusable)
-        {
-            OnSoundTick += _soundEmitter.Tick;
-            if (_focusable)
-            {
-                focusableEmitters.Add(_soundEmitter);
-                return;
-            }
-            BasicSoundWhenFocused += _soundEmitter.Unfocus;
-            BasicSoundWhenUnFocused += _soundEmitter.Focus;
-        }
 
         private void OnTriggerEnter(Collider other)
         {
             ISoundEmitting emitter = other.GetComponent<ISoundEmitting>();
-            if (emitter == null)
+            if (emitter is null)
                 return;
             if (emitter.IsActive())
                 return;
@@ -75,12 +32,27 @@ namespace Caeca.SoundControl
         private void OnTriggerExit(Collider other)
         {
             ISoundEmitting emitter = other.GetComponent<ISoundEmitting>();
-            if (emitter == null)
+            if (emitter is null)
                 return;
             if (!emitter.IsActive())
                 return;
 
             EmitterLeft(emitter, emitter.DeactivateEmitter());
+        }
+
+
+        public void EmitterLeft(ISoundEmitting _soundEmitter, bool _focusable)
+        {
+            soundTicker.EmitterLeft(_soundEmitter, _focusable);
+            soundFocuser.EmitterLeft(_soundEmitter, _focusable);
+            logger.Log("Emitter left");
+        }
+
+        public void EmitterEntered(ISoundEmitting _soundEmitter, bool _focusable)
+        {
+            soundTicker.EmitterEntered(_soundEmitter, _focusable);
+            soundFocuser.EmitterEntered(_soundEmitter, _focusable);
+            logger.Log("Emitter entered");
         }
     }
 }

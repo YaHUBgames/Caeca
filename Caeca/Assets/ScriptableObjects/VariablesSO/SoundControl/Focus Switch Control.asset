@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce18baa8ff55aff4e80d9a842df5280a, type: 3}
-  m_Name: Sound Receiver Logger
+  m_Script: {fileID: 11500000, guid: e7db7d644b73655488897252acdc1c22, type: 3}
+  m_Name: Focus Switch Control
   m_EditorClassIdentifier: 
-  showLog: 0
-  showLogWarning: 0
-  showLogError: 0
-  showDebugDraws: 0

@@ -32,8 +32,6 @@ namespace Caeca.SoundControl
 
         public void Change(float _volume)
         {
-            if (_volume == volume)
-                return;
             if (transition is not null)
                 StopCoroutine(transition);
             transition = StartCoroutine(Transition(_volume));
@@ -49,7 +47,7 @@ namespace Caeca.SoundControl
                 volume += delta * Time.deltaTime * SoundEmittingSettings.volumeTransitionSpeed;
                 volume = Mathf.Clamp(volume, 0f, maxVolume);
 
-                if (delta <= SoundEmittingSettings.volumeTransitionDeltaMin)
+                if (Mathf.Abs(delta) <= SoundEmittingSettings.volumeTransitionDeltaMin)
                     volume = _volume;
 
                 audioSource.volume = volume;

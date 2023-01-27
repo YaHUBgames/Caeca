@@ -15,9 +15,11 @@ namespace Caeca.SoundControl
         [Tooltip("Controls if the sound showl loop or not")]
         [SerializeField] private BoolSO doPlay = default;
 
+        [Header("Settings")]
         [Tooltip("Length of sound clips in seconds")]
         [SerializeField] private float clipLenth = 2f;
 
+        [Header("References")]
         [Tooltip("Reference to up to 8 sound sources starting with front-left one")]
         [SerializeField] private AudioSource[] audioSources;
 

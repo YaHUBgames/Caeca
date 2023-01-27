@@ -55,6 +55,24 @@ namespace Caeca.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Focus"",
+                    ""type"": ""Button"",
+                    ""id"": ""ee6095d3-a65f-4de6-8049-1137c5d13d35"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FocusSwitch"",
+                    ""type"": ""Value"",
+                    ""id"": ""2ef496b7-94c0-44b6-aa19-704cf8bf71be"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": ""NormalizeVector2"",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -90,6 +108,28 @@ namespace Caeca.Input
                     ""action"": ""ShowSonar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e0fbbade-04da-4966-b7e2-a7d660dc147a"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyMouse"",
+                    ""action"": ""Focus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12ce2d0e-7d26-4b6b-b187-1f8c8603fc35"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyMouse"",
+                    ""action"": ""FocusSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -107,6 +147,8 @@ namespace Caeca.Input
             m_Base_DirectOrient = m_Base.FindAction("DirectOrient", throwIfNotFound: true);
             m_Base_SetSonar = m_Base.FindAction("SetSonar", throwIfNotFound: true);
             m_Base_ShowSonar = m_Base.FindAction("ShowSonar", throwIfNotFound: true);
+            m_Base_Focus = m_Base.FindAction("Focus", throwIfNotFound: true);
+            m_Base_FocusSwitch = m_Base.FindAction("FocusSwitch", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -169,6 +211,8 @@ namespace Caeca.Input
         private readonly InputAction m_Base_DirectOrient;
         private readonly InputAction m_Base_SetSonar;
         private readonly InputAction m_Base_ShowSonar;
+        private readonly InputAction m_Base_Focus;
+        private readonly InputAction m_Base_FocusSwitch;
         public struct BaseActions
         {
             private @PlayerInputEvents m_Wrapper;
@@ -176,6 +220,8 @@ namespace Caeca.Input
             public InputAction @DirectOrient => m_Wrapper.m_Base_DirectOrient;
             public InputAction @SetSonar => m_Wrapper.m_Base_SetSonar;
             public InputAction @ShowSonar => m_Wrapper.m_Base_ShowSonar;
+            public InputAction @Focus => m_Wrapper.m_Base_Focus;
+            public InputAction @FocusSwitch => m_Wrapper.m_Base_FocusSwitch;
             public InputActionMap Get() { return m_Wrapper.m_Base; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -194,6 +240,12 @@ namespace Caeca.Input
                     @ShowSonar.started -= m_Wrapper.m_BaseActionsCallbackInterface.OnShowSonar;
                     @ShowSonar.performed -= m_Wrapper.m_BaseActionsCallbackInterface.OnShowSonar;
                     @ShowSonar.canceled -= m_Wrapper.m_BaseActionsCallbackInterface.OnShowSonar;
+                    @Focus.started -= m_Wrapper.m_BaseActionsCallbackInterface.OnFocus;
+                    @Focus.performed -= m_Wrapper.m_BaseActionsCallbackInterface.OnFocus;
+                    @Focus.canceled -= m_Wrapper.m_BaseActionsCallbackInterface.OnFocus;
+                    @FocusSwitch.started -= m_Wrapper.m_BaseActionsCallbackInterface.OnFocusSwitch;
+                    @FocusSwitch.performed -= m_Wrapper.m_BaseActionsCallbackInterface.OnFocusSwitch;
+                    @FocusSwitch.canceled -= m_Wrapper.m_BaseActionsCallbackInterface.OnFocusSwitch;
                 }
                 m_Wrapper.m_BaseActionsCallbackInterface = instance;
                 if (instance != null)
@@ -207,6 +259,12 @@ namespace Caeca.Input
                     @ShowSonar.started += instance.OnShowSonar;
                     @ShowSonar.performed += instance.OnShowSonar;
                     @ShowSonar.canceled += instance.OnShowSonar;
+                    @Focus.started += instance.OnFocus;
+                    @Focus.performed += instance.OnFocus;
+                    @Focus.canceled += instance.OnFocus;
+                    @FocusSwitch.started += instance.OnFocusSwitch;
+                    @FocusSwitch.performed += instance.OnFocusSwitch;
+                    @FocusSwitch.canceled += instance.OnFocusSwitch;
                 }
             }
         }
@@ -225,6 +283,8 @@ namespace Caeca.Input
             void OnDirectOrient(InputAction.CallbackContext context);
             void OnSetSonar(InputAction.CallbackContext context);
             void OnShowSonar(InputAction.CallbackContext context);
+            void OnFocus(InputAction.CallbackContext context);
+            void OnFocusSwitch(InputAction.CallbackContext context);
         }
     }
 }

@@ -29,12 +29,14 @@ namespace Caeca.ScriptableObjects
         public event OnEventRaised OnVarSync;
         public T value { get; private set; }
 
-        public virtual void ChangeVariable(T _value)
+        public virtual void ChangeVariable(T _value, bool _suppresSync = false)
         {
             if (_value.Equals(value))
                 return;
             value = _value;
-            OnVarSync?.Invoke(value);
+
+            if (!_suppresSync)
+                OnVarSync?.Invoke(value);
         }
     }
 
@@ -51,13 +53,25 @@ namespace Caeca.ScriptableObjects
         public T1 value1 { get; private set; }
         public T2 value2 { get; private set; }
 
-        public virtual void ChangeVariable(T1 _value1, T2 _value2)
+        public virtual void ChangeVariables(T1 _value1, T2 _value2, bool _suppresSync = false)
         {
             if (_value1.Equals(value1) && _value2.Equals(value2))
                 return;
             value1 = _value1;
             value2 = _value2;
-            OnVarSync?.Invoke(value1, value2);
+
+            if (!_suppresSync)
+                OnVarSync?.Invoke(value1, value2);
+        }
+
+        public virtual void ChangeVariable1(T1 _value1, bool _suppresSync = false)
+        {
+            ChangeVariables(_value1, value2, _suppresSync);
+        }
+
+        public virtual void ChangeVariable2(T2 _value2, bool _suppresSync = false)
+        {
+            ChangeVariables(value1, _value2, _suppresSync);
         }
     }
 }

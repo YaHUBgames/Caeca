@@ -2174,7 +2174,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.1
-  MaxDistance: 20
+  MaxDistance: 30
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -2193,14 +2193,14 @@ AudioSource:
       inWeight: 0.33333334
       outWeight: 0.11901851
     - serializedVersion: 3
-      time: 0.16435939
-      value: 0.22587997
-      inSlope: -0.4586177
-      outSlope: -0.4586177
+      time: 0.16166621
+      value: 0.21793014
+      inSlope: -0.6712765
+      outSlope: -0.6712765
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.15261646
+      outWeight: 0.15490049
     - serializedVersion: 3
       time: 1
       value: 0
@@ -2274,20 +2274,11 @@ MonoBehaviour:
   canPlay: 1
   soundPack:
     clips:
-    - {fileID: 8300000, guid: 6f7c3eefc6192d64f91d5b699c74bf78, type: 3}
-    - {fileID: 8300000, guid: 9da001b3c36fa9743851a78ff1a20131, type: 3}
-    - {fileID: 8300000, guid: 8bdab4526c19ed64894c958e11eb106a, type: 3}
-    - {fileID: 8300000, guid: 271cc6ff5ad5aff429effe985cf88a19, type: 3}
-    - {fileID: 8300000, guid: 099d444cfed06e4499b729726ac802e5, type: 3}
-    - {fileID: 8300000, guid: 5115f37be1bc0b14891bedd85efb9787, type: 3}
-    - {fileID: 8300000, guid: 3b00b52a89310874d9943ec0b00403cd, type: 3}
-    - {fileID: 8300000, guid: d110a0c9b5578574187fc13b904b2d8d, type: 3}
-    - {fileID: 8300000, guid: d585402ea0289da40b4fed72a64bb57d, type: 3}
-    - {fileID: 8300000, guid: 99665543612603b4d9bfdddbd3fc2920, type: 3}
+    - {fileID: 8300000, guid: 7796655ab00921a4eb3b3c91a65168a2, type: 3}
     randomMinPitch: 1
     randomMaxPitch: 1
-    randomMinDelay: 1
-    randomMaxDelay: 1
+    randomMinDelay: 53
+    randomMaxDelay: 53
 --- !u!114 &813272300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2338,7 +2329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813272297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.28, y: 0, z: -2.29}
+  m_LocalPosition: {x: 17.58, y: 0, z: 11.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3287,7 +3278,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.1
-  MaxDistance: 20
+  MaxDistance: 30
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -3306,14 +3297,14 @@ AudioSource:
       inWeight: 0.33333334
       outWeight: 0.11901851
     - serializedVersion: 3
-      time: 0.16435939
-      value: 0.22587997
-      inSlope: -0.4586177
-      outSlope: -0.4586177
+      time: 0.16166621
+      value: 0.21793014
+      inSlope: -0.6712765
+      outSlope: -0.6712765
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.15261646
+      outWeight: 0.15490049
     - serializedVersion: 3
       time: 1
       value: 0
@@ -3387,20 +3378,11 @@ MonoBehaviour:
   canPlay: 1
   soundPack:
     clips:
-    - {fileID: 8300000, guid: 6f7c3eefc6192d64f91d5b699c74bf78, type: 3}
-    - {fileID: 8300000, guid: 9da001b3c36fa9743851a78ff1a20131, type: 3}
-    - {fileID: 8300000, guid: 8bdab4526c19ed64894c958e11eb106a, type: 3}
-    - {fileID: 8300000, guid: 271cc6ff5ad5aff429effe985cf88a19, type: 3}
-    - {fileID: 8300000, guid: 099d444cfed06e4499b729726ac802e5, type: 3}
-    - {fileID: 8300000, guid: 5115f37be1bc0b14891bedd85efb9787, type: 3}
-    - {fileID: 8300000, guid: 3b00b52a89310874d9943ec0b00403cd, type: 3}
-    - {fileID: 8300000, guid: d110a0c9b5578574187fc13b904b2d8d, type: 3}
-    - {fileID: 8300000, guid: d585402ea0289da40b4fed72a64bb57d, type: 3}
-    - {fileID: 8300000, guid: 99665543612603b4d9bfdddbd3fc2920, type: 3}
+    - {fileID: 8300000, guid: 23f18a9a68e4aeb4da21d957a8f2a6d9, type: 3}
     randomMinPitch: 1
     randomMaxPitch: 1
-    randomMinDelay: 1
-    randomMaxDelay: 1
+    randomMinDelay: 53
+    randomMaxDelay: 53
 --- !u!114 &1101006286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3429,7 +3411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundPlayer: {fileID: 1101006285}
   soundVolume: {fileID: 1101006286}
-  focusable: 0
+  focusable: 1
 --- !u!135 &1101006288
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3451,7 +3433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101006283}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.9, y: 0, z: -13.7}
+  m_LocalPosition: {x: -0.8, y: 0, z: -18.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4257,7 +4239,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.1
-  MaxDistance: 20
+  MaxDistance: 30
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -4276,14 +4258,14 @@ AudioSource:
       inWeight: 0.33333334
       outWeight: 0.11901851
     - serializedVersion: 3
-      time: 0.16435939
-      value: 0.22587997
-      inSlope: -0.4586177
-      outSlope: -0.4586177
+      time: 0.16166621
+      value: 0.21793014
+      inSlope: -0.6712765
+      outSlope: -0.6712765
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.15261646
+      outWeight: 0.15490049
     - serializedVersion: 3
       time: 1
       value: 0
@@ -4357,20 +4339,11 @@ MonoBehaviour:
   canPlay: 1
   soundPack:
     clips:
-    - {fileID: 8300000, guid: 6f7c3eefc6192d64f91d5b699c74bf78, type: 3}
-    - {fileID: 8300000, guid: 9da001b3c36fa9743851a78ff1a20131, type: 3}
-    - {fileID: 8300000, guid: 8bdab4526c19ed64894c958e11eb106a, type: 3}
-    - {fileID: 8300000, guid: 271cc6ff5ad5aff429effe985cf88a19, type: 3}
-    - {fileID: 8300000, guid: 099d444cfed06e4499b729726ac802e5, type: 3}
-    - {fileID: 8300000, guid: 5115f37be1bc0b14891bedd85efb9787, type: 3}
-    - {fileID: 8300000, guid: 3b00b52a89310874d9943ec0b00403cd, type: 3}
-    - {fileID: 8300000, guid: d110a0c9b5578574187fc13b904b2d8d, type: 3}
-    - {fileID: 8300000, guid: d585402ea0289da40b4fed72a64bb57d, type: 3}
-    - {fileID: 8300000, guid: 99665543612603b4d9bfdddbd3fc2920, type: 3}
+    - {fileID: 8300000, guid: 5202cfd350b90d94284d2baf22884694, type: 3}
     randomMinPitch: 1
     randomMaxPitch: 1
-    randomMinDelay: 1
-    randomMaxDelay: 1
+    randomMinDelay: 53
+    randomMaxDelay: 53
 --- !u!114 &1455846052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4399,7 +4372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundPlayer: {fileID: 1455846051}
   soundVolume: {fileID: 1455846052}
-  focusable: 0
+  focusable: 1
 --- !u!135 &1455846054
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4421,7 +4394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455846049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.2, y: 0, z: 9.28}
+  m_LocalPosition: {x: -6.8, y: 0, z: 17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4464,6 +4437,8 @@ MonoBehaviour:
   doPlayDirectOrientation: {fileID: 11400000, guid: 08a72f49e63d2034185304015d41924c,
     type: 2}
   doPlaySonar: {fileID: 11400000, guid: 6b54bd8a98339614cb1c6ab3aadf3a9a, type: 2}
+  focusControl: {fileID: 11400000, guid: 7b034a1a435ae0444b01555a5f43db7b, type: 2}
+  focusSwitch: {fileID: 11400000, guid: 7b3a37ee66f15cc4fbd3d0011255cd23, type: 2}
   logger: {fileID: 11400000, guid: 10b26393a570c3445b2712cbcffab298, type: 2}
 --- !u!4 &1472351080
 Transform:
@@ -4775,6 +4750,8 @@ GameObject:
   - component: {fileID: 1593534565}
   - component: {fileID: 1593534561}
   - component: {fileID: 1593534563}
+  - component: {fileID: 1593534567}
+  - component: {fileID: 1593534566}
   m_Layer: 10
   m_Name: SoundReceiver
   m_TagString: Untagged
@@ -4825,10 +4802,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2fa53de7fb1de47942be6913ffd264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sphereMask:
-    serializedVersion: 2
-    m_Bits: 512
-  index: -1
+  soundFocuser: {fileID: 1593534567}
+  soundTicker: {fileID: 1593534566}
   logger: {fileID: 11400000, guid: 0b92822fd8ada174abd69f7f38bd53aa, type: 2}
 --- !u!135 &1593534564
 SphereCollider:
@@ -4841,7 +4816,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 20
+  m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1593534565
 Rigidbody:
@@ -4859,6 +4834,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1593534566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593534560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf0cf46ed08b2b44b010e67cc61cd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1593534567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593534560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e609706641d27e7459bca22b2ee13c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusControl: {fileID: 11400000, guid: 7b034a1a435ae0444b01555a5f43db7b, type: 2}
+  focusSwitchControl: {fileID: 11400000, guid: 7b3a37ee66f15cc4fbd3d0011255cd23, type: 2}
 --- !u!1 &1641823748
 GameObject:
   m_ObjectHideFlags: 0
