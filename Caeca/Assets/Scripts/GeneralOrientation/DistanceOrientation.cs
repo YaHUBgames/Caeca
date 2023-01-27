@@ -66,7 +66,7 @@ namespace Caeca.GeneralOrientation
         /// <param name="value">New look at target</param>
         public void TriggerInterface(Transform value)
         {
-            if (value == null)
+            if (value is null)
             {
                 target = orientTransform;
                 return;

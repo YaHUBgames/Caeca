@@ -1,5 +1,7 @@
 using UnityEngine;
 
+using Caeca.DebugSystems;
+
 namespace Caeca.Interfaces
 {
     /// <summary>
@@ -19,9 +21,9 @@ namespace Caeca.Interfaces
         /// <param name="context"></param>
         public void OnValidate(Object context = null)
         {
-            if (interfaceObject.GetComponent<T>() == null)
+            if (interfaceObject.GetComponent<T>() is null)
             {
-                Debug.LogError("Passed object does not contain set interface", context);
+                StaticDebugLogger.logger.LogError("Passed object does not contain set interface", context);
                 return;
             }
             intrfs = interfaceObject.GetComponent<T>();

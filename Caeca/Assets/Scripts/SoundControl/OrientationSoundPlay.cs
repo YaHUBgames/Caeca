@@ -15,9 +15,11 @@ namespace Caeca.SoundControl
         [Tooltip("Controls if the sound showl loop or not")]
         [SerializeField] private BoolSO doPlay = default;
 
+        [Header("Settings")]
         [Tooltip("Length of sound clips in seconds")]
         [SerializeField] private float clipLenth = 2f;
 
+        [Header("References")]
         [Tooltip("Reference to up to 8 sound sources starting with front-left one")]
         [SerializeField] private AudioSource[] audioSources;
 
@@ -48,7 +50,7 @@ namespace Caeca.SoundControl
                 yield return new WaitUntil(() => doPlay.value);
                 for (int i = 0; i < audioSources.Length; i++)
                     audioSources[i].PlayOneShot(audioSources[i].clip);
-                if (soundBeat != null)
+                if (soundBeat is not null)
                     foreach (InterfaceObject<GenericInterface<bool>> interfaceObject in soundBeat)
                         interfaceObject.intrfs.TriggerInterface(true);
             }

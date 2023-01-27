@@ -12,16 +12,21 @@ namespace Caeca.Control
     /// </summary>
     public class SoundSystemControls : MonoBehaviour
     {
-        private PlayerInputEvents input;
-
         [Header("Sound orientation controls")]
         [SerializeField] private BoolSO doPlay8DirOrientation = default;
         [SerializeField] private BoolSO doPlayLedgeOrientation = default;
         [SerializeField] private BoolSO doPlayDirectOrientation = default;
         [SerializeField] private BoolSO doPlaySonar = default;
 
+        [SerializeField] private BoolSO focusControl = default;
+        [SerializeField] private IntSO focusSwitch = default;
+
         [Header("Debugging")]
         [SerializeField] private DebugLogger logger;
+
+        
+        private PlayerInputEvents input;
+
 
         private void Awake()
         {
@@ -32,6 +37,10 @@ namespace Caeca.Control
 
             input.Base.ShowSonar.performed += OnSonarOrientPerformed;
             input.Base.ShowSonar.canceled += OnSonarOrientCanceled;
+
+            input.Base.Focus.performed += OnFocusPerformed;
+            input.Base.Focus.canceled += OnFocusCanceled;
+            input.Base.FocusSwitch.performed += OnFocusSwitchPerformed;
 
             doPlay8DirOrientation.ChangeVariable(true);
             doPlayLedgeOrientation.ChangeVariable(true);
@@ -45,6 +54,9 @@ namespace Caeca.Control
             input.Base.DirectOrient.canceled -= OnDirectOrientCanceled;
             input.Base.ShowSonar.performed -= OnSonarOrientPerformed;
             input.Base.ShowSonar.canceled -= OnSonarOrientCanceled;
+            input.Base.Focus.performed -= OnFocusPerformed;
+            input.Base.Focus.canceled -= OnFocusCanceled;
+            input.Base.FocusSwitch.performed -= OnFocusSwitchPerformed;
             input.Base.Disable();
         }
 
@@ -70,6 +82,25 @@ namespace Caeca.Control
         {
             doPlaySonar.ChangeVariable(false);
             logger.Log("Sonar OFF", this);
+        }
+
+        public void OnFocusPerformed(InputAction.CallbackContext context)
+        {
+            focusControl.ChangeVariable(true);
+            logger.Log("Focus ON", this);
+        }
+
+        public void OnFocusCanceled(InputAction.CallbackContext context)
+        {
+            focusControl.ChangeVariable(false);
+            logger.Log("Focus OFF", this);
+        }
+
+        public void OnFocusSwitchPerformed(InputAction.CallbackContext context)
+        {
+            int dir = Mathf.RoundToInt(context.ReadValue<Vector2>().y);
+            focusSwitch.ChangeVariable(focusSwitch.value + dir);
+            logger.Log("Focus switched " + dir, this);
         }
     }
 }
