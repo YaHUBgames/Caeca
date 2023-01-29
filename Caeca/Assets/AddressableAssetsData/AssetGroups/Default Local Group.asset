@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4ebc7a470a7a7404f9f54812fbd560b2
+  m_SerializeEntries:
+  - m_GUID: 94103755a86a3ba41855ca1d096d303c
+    m_Address: AudioClipPacks/TestFootsteps
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6f7c3eefc6192d64f91d5b699c74bf78
+    m_Address: Assets/Audio/Testing/Grass footstep 1.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9da001b3c36fa9743851a78ff1a20131
+    m_Address: Assets/Audio/Testing/Grass footstep 2.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8bdab4526c19ed64894c958e11eb106a
+    m_Address: Assets/Audio/Testing/Grass footstep 3.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 271cc6ff5ad5aff429effe985cf88a19
+    m_Address: Assets/Audio/Testing/Grass footstep 4.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 099d444cfed06e4499b729726ac802e5
+    m_Address: Assets/Audio/Testing/Grass footstep 5.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5115f37be1bc0b14891bedd85efb9787
+    m_Address: Assets/Audio/Testing/Grass footstep 6.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3b00b52a89310874d9943ec0b00403cd
+    m_Address: Assets/Audio/Testing/Grass footstep 7.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d110a0c9b5578574187fc13b904b2d8d
+    m_Address: Assets/Audio/Testing/Grass footstep 8.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d585402ea0289da40b4fed72a64bb57d
+    m_Address: Assets/Audio/Testing/Grass footstep 9.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 99665543612603b4d9bfdddbd3fc2920
+    m_Address: Assets/Audio/Testing/Grass footstep 10.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 92a3f5c674b59a940a5ea730c8c2b1ea, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d9a0e5b8564334d4a909f09f51f8c338, type: 2}
+    - {fileID: 11400000, guid: 7c6c87eceb420b746aaf5afe17f1bd88, type: 2}

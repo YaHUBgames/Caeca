@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142c66cc0c047534d94f91e1104ce6e0, type: 3}
+  m_Name: TestFootsteps
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 6f7c3eefc6192d64f91d5b699c74bf78, type: 3}
+  - {fileID: 8300000, guid: 9da001b3c36fa9743851a78ff1a20131, type: 3}
+  - {fileID: 8300000, guid: 8bdab4526c19ed64894c958e11eb106a, type: 3}
+  - {fileID: 8300000, guid: 271cc6ff5ad5aff429effe985cf88a19, type: 3}
+  - {fileID: 8300000, guid: 099d444cfed06e4499b729726ac802e5, type: 3}
+  - {fileID: 8300000, guid: 5115f37be1bc0b14891bedd85efb9787, type: 3}
+  - {fileID: 8300000, guid: 3b00b52a89310874d9943ec0b00403cd, type: 3}
+  - {fileID: 8300000, guid: d110a0c9b5578574187fc13b904b2d8d, type: 3}
+  - {fileID: 8300000, guid: d585402ea0289da40b4fed72a64bb57d, type: 3}
+  - {fileID: 8300000, guid: 99665543612603b4d9bfdddbd3fc2920, type: 3}

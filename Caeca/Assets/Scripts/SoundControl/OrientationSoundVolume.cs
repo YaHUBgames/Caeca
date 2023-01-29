@@ -76,10 +76,7 @@ namespace Caeca.SoundControl
             if (!_doPlay)
                 return;
             for (int i = 0; i < audioSources.Length; i++)
-            {
-                currentVolume[i] = startVolume;
-                audioSources[i].volume = currentVolume[i];
-            }
+                volume[i] = startVolume;
         }
 
 
@@ -91,6 +88,8 @@ namespace Caeca.SoundControl
         /// <param name="value3">Shift value.</param>
         public void TriggerInterface(float[] value1, float value2, float value3)
         {
+            if(!doPlay.value)
+                return;
             for (int i = 0; i < audioSources.Length; i++)
             {
                 volume[i] = Mathf.Clamp(((reverseVolume ? value1[i] + value3 : value2 - (value1[i] + value3)) / value2), 0f, maxVolume);
@@ -105,6 +104,8 @@ namespace Caeca.SoundControl
         /// <param name="value">New volume for all audio sources</param>
         public void TriggerInterface(float value)
         {
+            if(!doPlay.value)
+                return;
             for (int i = 0; i < audioSources.Length; i++)
                 volume[i] = Mathf.Clamp(value, 0, 1);
         }
