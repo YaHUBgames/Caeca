@@ -9,5 +9,8 @@ namespace Caeca.SoundControl
         public const float volumeTransitionSpeed = 3f;
 
         public const float volumeTransitionDeltaMin = 0.05f;
+
+
+        public const float emitterTickLength = 0.1f;
     }
 }

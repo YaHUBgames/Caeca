@@ -39,6 +39,24 @@ namespace Caeca.Input
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Direct"",
+                    ""type"": ""Button"",
+                    ""id"": ""f1b782ad-76f1-4881-ac2e-1313dd828c7e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""86450e34-d131-45ed-85d6-93922da2c231"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Sonar"",
                     ""type"": ""Button"",
                     ""id"": ""ce7e94a6-ed3c-46da-b3ed-ba82d6e01e12"",
@@ -70,7 +88,7 @@ namespace Caeca.Input
                 {
                     ""name"": """",
                     ""id"": ""c8f470a2-be82-44cb-b854-6bf8fec4df70"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyMouse"",
@@ -81,7 +99,7 @@ namespace Caeca.Input
                 {
                     ""name"": """",
                     ""id"": ""e727d1e2-cb1c-4fc9-af1a-a13abf7ddad9"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyMouse"",
@@ -92,10 +110,21 @@ namespace Caeca.Input
                 {
                     ""name"": """",
                     ""id"": ""e0fbbade-04da-4966-b7e2-a7d660dc147a"",
-                    ""path"": ""<Keyboard>/ctrl"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyMouse"",
+                    ""action"": ""Focus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""00d9f11a-f275-45f1-8673-fe21ee7651a0"",
+                    ""path"": ""<Keyboard>/numpad0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
                     ""action"": ""Focus"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -108,6 +137,28 @@ namespace Caeca.Input
                     ""processors"": """",
                     ""groups"": ""KeyMouse"",
                     ""action"": ""FocusSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a885a8ac-e244-487e-ab13-f0109d36199e"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyMouse"",
+                    ""action"": ""Direct"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""856c0645-7156-412a-93ee-860b638eecb7"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyMouse"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -125,6 +176,8 @@ namespace Caeca.Input
             // Base
             m_Base = asset.FindActionMap("Base", throwIfNotFound: true);
             m_Base_Orient = m_Base.FindAction("Orient", throwIfNotFound: true);
+            m_Base_Direct = m_Base.FindAction("Direct", throwIfNotFound: true);
+            m_Base_Interact = m_Base.FindAction("Interact", throwIfNotFound: true);
             m_Base_Sonar = m_Base.FindAction("Sonar", throwIfNotFound: true);
             m_Base_Focus = m_Base.FindAction("Focus", throwIfNotFound: true);
             m_Base_FocusSwitch = m_Base.FindAction("FocusSwitch", throwIfNotFound: true);
@@ -188,6 +241,8 @@ namespace Caeca.Input
         private readonly InputActionMap m_Base;
         private IBaseActions m_BaseActionsCallbackInterface;
         private readonly InputAction m_Base_Orient;
+        private readonly InputAction m_Base_Direct;
+        private readonly InputAction m_Base_Interact;
         private readonly InputAction m_Base_Sonar;
         private readonly InputAction m_Base_Focus;
         private readonly InputAction m_Base_FocusSwitch;
@@ -196,6 +251,8 @@ namespace Caeca.Input
             private @PlayerInputEvents m_Wrapper;
             public BaseActions(@PlayerInputEvents wrapper) { m_Wrapper = wrapper; }
             public InputAction @Orient => m_Wrapper.m_Base_Orient;
+            public InputAction @Direct => m_Wrapper.m_Base_Direct;
+            public InputAction @Interact => m_Wrapper.m_Base_Interact;
             public InputAction @Sonar => m_Wrapper.m_Base_Sonar;
             public InputAction @Focus => m_Wrapper.m_Base_Focus;
             public InputAction @FocusSwitch => m_Wrapper.m_Base_FocusSwitch;
@@ -211,6 +268,12 @@ namespace Caeca.Input
                     @Orient.started -= m_Wrapper.m_BaseActionsCallbackInterface.OnOrient;
                     @Orient.performed -= m_Wrapper.m_BaseActionsCallbackInterface.OnOrient;
                     @Orient.canceled -= m_Wrapper.m_BaseActionsCallbackInterface.OnOrient;
+                    @Direct.started -= m_Wrapper.m_BaseActionsCallbackInterface.OnDirect;
+                    @Direct.performed -= m_Wrapper.m_BaseActionsCallbackInterface.OnDirect;
+                    @Direct.canceled -= m_Wrapper.m_BaseActionsCallbackInterface.OnDirect;
+                    @Interact.started -= m_Wrapper.m_BaseActionsCallbackInterface.OnInteract;
+                    @Interact.performed -= m_Wrapper.m_BaseActionsCallbackInterface.OnInteract;
+                    @Interact.canceled -= m_Wrapper.m_BaseActionsCallbackInterface.OnInteract;
                     @Sonar.started -= m_Wrapper.m_BaseActionsCallbackInterface.OnSonar;
                     @Sonar.performed -= m_Wrapper.m_BaseActionsCallbackInterface.OnSonar;
                     @Sonar.canceled -= m_Wrapper.m_BaseActionsCallbackInterface.OnSonar;
@@ -227,6 +290,12 @@ namespace Caeca.Input
                     @Orient.started += instance.OnOrient;
                     @Orient.performed += instance.OnOrient;
                     @Orient.canceled += instance.OnOrient;
+                    @Direct.started += instance.OnDirect;
+                    @Direct.performed += instance.OnDirect;
+                    @Direct.canceled += instance.OnDirect;
+                    @Interact.started += instance.OnInteract;
+                    @Interact.performed += instance.OnInteract;
+                    @Interact.canceled += instance.OnInteract;
                     @Sonar.started += instance.OnSonar;
                     @Sonar.performed += instance.OnSonar;
                     @Sonar.canceled += instance.OnSonar;
@@ -252,6 +321,8 @@ namespace Caeca.Input
         public interface IBaseActions
         {
             void OnOrient(InputAction.CallbackContext context);
+            void OnDirect(InputAction.CallbackContext context);
+            void OnInteract(InputAction.CallbackContext context);
             void OnSonar(InputAction.CallbackContext context);
             void OnFocus(InputAction.CallbackContext context);
             void OnFocusSwitch(InputAction.CallbackContext context);

@@ -12,8 +12,7 @@ namespace Caeca.Control.SoundSystem
     public class SonarTargetControl : MonoBehaviour
     {
         [SerializeField] private BoolSO focusControl = default;
-        [SerializeField] private IntSO focusSwitchControl;
-        [SerializeField] private BoolSO doPlaySonar = default;
+        [SerializeField] private VoidSO doInteract;
 
         [SerializeField] private SoundFocuser soundFocuser;
         [SerializeField] private Transform defaultTarget;
@@ -21,6 +20,7 @@ namespace Caeca.Control.SoundSystem
         [Header("OUTPUT")]
         [SerializeField, Tooltip("<Transform> -> New target for sonar")]
         private InterfaceObject<GenericInterface<Transform>>[] setNewTarget;
+
 
         private void OnValidate()
         {
@@ -30,28 +30,19 @@ namespace Caeca.Control.SoundSystem
 
         private void Awake()
         {
-            focusControl.OnVarSync += OnControlChange;
-            doPlaySonar.OnVarSync += OnControlChange;
-            focusSwitchControl.OnVarSync += OnControlSwitch;
+            doInteract.OnEvent += OnInteract;
         }
 
         private void OnDisable()
         {
-            focusControl.OnVarSync -= OnControlChange;
-            doPlaySonar.OnVarSync -= OnControlChange;
-            focusSwitchControl.OnVarSync -= OnControlSwitch;
+            doInteract.OnEvent -= OnInteract;
         }
 
 
-        public void OnControlChange(bool _unused)
+        public void OnInteract()
         {
-            if (focusControl.value && doPlaySonar.value)
+            if (focusControl.value)
                 GetNewTarget();
-        }
-
-        public void OnControlSwitch(int _unused)
-        {
-            OnControlChange(true);
         }
 
         private void GetNewTarget()

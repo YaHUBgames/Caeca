@@ -12,6 +12,7 @@ namespace Caeca.SoundControl
     {
         [Header("References")]
         [SerializeField] private SoundFocuser soundFocuser;
+        [SerializeField] private SoundInteracter soundInteracter;
         [SerializeField] private SoundTicker soundTicker;
 
         [Header("Debugging")]
@@ -45,6 +46,7 @@ namespace Caeca.SoundControl
         {
             soundTicker.EmitterLeft(_soundEmitter, _focusable);
             soundFocuser.EmitterLeft(_soundEmitter, _focusable);
+            soundInteracter.EmitterLeft(_soundEmitter, _focusable);
             logger.Log("Emitter left");
         }
 
@@ -52,6 +54,7 @@ namespace Caeca.SoundControl
         {
             soundTicker.EmitterEntered(_soundEmitter, _focusable);
             soundFocuser.EmitterEntered(_soundEmitter, _focusable);
+            soundInteracter.EmitterEntered(_soundEmitter, _focusable);
             logger.Log("Emitter entered");
         }
     }

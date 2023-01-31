@@ -15,6 +15,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Direct",
+                    "type": "Button",
+                    "id": "f1b782ad-76f1-4881-ac2e-1313dd828c7e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "86450e34-d131-45ed-85d6-93922da2c231",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Sonar",
                     "type": "Button",
                     "id": "ce7e94a6-ed3c-46da-b3ed-ba82d6e01e12",
@@ -46,7 +64,7 @@
                 {
                     "name": "",
                     "id": "c8f470a2-be82-44cb-b854-6bf8fec4df70",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyMouse",
@@ -57,7 +75,7 @@
                 {
                     "name": "",
                     "id": "e727d1e2-cb1c-4fc9-af1a-a13abf7ddad9",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyMouse",
@@ -68,10 +86,21 @@
                 {
                     "name": "",
                     "id": "e0fbbade-04da-4966-b7e2-a7d660dc147a",
-                    "path": "<Keyboard>/ctrl",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyMouse",
+                    "action": "Focus",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "00d9f11a-f275-45f1-8673-fe21ee7651a0",
+                    "path": "<Keyboard>/numpad0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Focus",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -84,6 +113,28 @@
                     "processors": "",
                     "groups": "KeyMouse",
                     "action": "FocusSwitch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a885a8ac-e244-487e-ab13-f0109d36199e",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyMouse",
+                    "action": "Direct",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "856c0645-7156-412a-93ee-860b638eecb7",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyMouse",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

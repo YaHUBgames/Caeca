@@ -9,11 +9,11 @@ namespace Caeca.ScriptableObjects
     {
         public delegate void OnEventRaised();
         /// <summary>Event notifying about change.</summary>
-        public event OnEventRaised OnVarSync;
+        public event OnEventRaised OnEvent;
 
-        public virtual void ChangeVariable()
+        public virtual void InvokeSync()
         {
-            OnVarSync?.Invoke();
+            OnEvent?.Invoke();
         }
     }
 

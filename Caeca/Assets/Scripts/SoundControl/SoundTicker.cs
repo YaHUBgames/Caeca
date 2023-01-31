@@ -24,8 +24,8 @@ namespace Caeca.SoundControl
         {
             while (true)
             {
-                yield return new WaitForSeconds(0.1f);
-                OnSoundTick?.Invoke(0.1f);
+                yield return new WaitForSeconds(SoundEmittingSettings.emitterTickLength);
+                OnSoundTick?.Invoke(SoundEmittingSettings.emitterTickLength);
             }
         }
 
