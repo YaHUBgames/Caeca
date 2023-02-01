@@ -6,7 +6,7 @@ using Caeca.DebugSystems;
 namespace Caeca.SoundControl
 {
     /// <summary>
-    /// It receives the sound emitters that entered these objects, triggers the collider and send information about these to sound focuser and ticker.
+    /// It receives the sound emitters that entered these objects, triggers the collider and send information about these to sound focuser, ticker and interacter.
     /// </summary>
     public class SoundReceiver : MonoBehaviour, ISoundReceiving
     {

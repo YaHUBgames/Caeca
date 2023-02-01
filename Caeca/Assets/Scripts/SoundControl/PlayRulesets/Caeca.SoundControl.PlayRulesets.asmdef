@@ -1,0 +1,21 @@
+{
+    "name": "Caeca.SoundControl.PlayRulesets",
+    "rootNamespace": "Caeca.SoundControl.PlayRulesets",
+    "references": [
+        "GUID:f203098182a15de4ba9a6e3a6801d8c3",
+        "GUID:e814a8df81d6e5f42b0e4f386955afff",
+        "GUID:7aeeb10e441091e44b586275bd8f4b3a",
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:f64864546a8f4624fa9306c790e0a6cf"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

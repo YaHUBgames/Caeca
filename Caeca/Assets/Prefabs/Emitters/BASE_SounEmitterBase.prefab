@@ -10,14 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7193364948594433675}
   - component: {fileID: 4968401269412499495}
-  - component: {fileID: 70783787134417960}
   - component: {fileID: 7410721358901932187}
   m_Layer: 9
   m_Name: AudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7193364948594433675
 Transform:
@@ -48,21 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 7410721358901932187}
   maxVolume: 1
---- !u!114 &70783787134417960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6350942887487650683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4082d8c0353adb4ab2c3f81fa9fdb56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 7410721358901932187}
-  canPlay: 1
-  soundPack: {fileID: 5232980362055853291}
 --- !u!82 &7410721358901932187
 AudioSource:
   m_ObjectHideFlags: 0
@@ -85,7 +69,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.1
-  MaxDistance: 33
+  MaxDistance: 55
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -180,13 +164,14 @@ GameObject:
   - component: {fileID: 5892167904199239859}
   - component: {fileID: 9077229266304878255}
   - component: {fileID: 5919887467640735182}
-  - component: {fileID: 5232980362055853291}
+  - component: {fileID: 4054756312980421114}
+  - component: {fileID: 6096072010490522326}
   m_Layer: 9
   m_Name: BASE_SounEmitterBase
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5892167904199239859
 Transform:
@@ -215,7 +200,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 50
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5919887467640735182
 MonoBehaviour:
@@ -229,10 +214,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5fc795be9b9598438a7707ae3fa4934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundPlayer: {fileID: 70783787134417960}
+  soundPlayer: {fileID: 4054756312980421114}
   soundVolume: {fileID: 4968401269412499495}
   focusable: 0
---- !u!114 &5232980362055853291
+--- !u!114 &4054756312980421114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,15 +226,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 8432371084160621728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f41901c2f4595dc4e8e82b0c203f0849, type: 3}
+  m_Script: {fileID: 11500000, guid: d4082d8c0353adb4ab2c3f81fa9fdb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 7410721358901932187}
   clipPackReference:
     m_AssetGUID: 
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  randomMinPitch: 1
-  randomMaxPitch: 1
-  randomMinDelay: 1
-  randomMaxDelay: 1
+  playRuleset: {fileID: 6096072010490522326}
+  canPlay: 1
+--- !u!114 &6096072010490522326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432371084160621728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcfb058c92e4db943bbb22a4b76a38da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

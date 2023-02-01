@@ -7,6 +7,9 @@ using Caeca.ScriptableObjects;
 
 namespace Caeca.SoundControl
 {
+    /// <summary>
+    /// Class that handles interact logic - when and what can be interacted with.
+    /// </summary>
     public class SoundInteracter : MonoBehaviour
     {
         [Header("Controls")]

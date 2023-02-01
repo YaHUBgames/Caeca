@@ -8,6 +8,9 @@ using Caeca.ScriptableObjects;
 
 namespace Caeca.Control.SoundSystem
 {
+    /// <summary>
+    /// Controls the interact action.
+    /// </summary>
     public class InteractControl : MonoBehaviour
     {
         [Header("Controls")]

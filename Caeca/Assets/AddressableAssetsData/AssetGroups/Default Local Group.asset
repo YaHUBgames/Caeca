@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 4ebc7a470a7a7404f9f54812fbd560b2
   m_SerializeEntries:
   - m_GUID: 94103755a86a3ba41855ca1d096d303c
-    m_Address: AudioClipPacks/TestFootsteps
+    m_Address: SFX/TestFootsteps
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 6f7c3eefc6192d64f91d5b699c74bf78
@@ -59,6 +59,186 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 99665543612603b4d9bfdddbd3fc2920
     m_Address: Assets/Audio/Testing/Grass footstep 10.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4cbbf79fabec1ec4e80682c2afcfb139
+    m_Address: SFX/Water/LargeWaves
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d348d7128fd6d584c96d4ecf45d85484
+    m_Address: Assets/Audio/Waves/Medium Wave 7.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3c2812893be300947903e69a656c9a75
+    m_Address: Assets/Audio/Waves/Large Wave 2.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d304b85dca83fdc4e8d527ab25c827eb
+    m_Address: Assets/Audio/Waves/Medium Wave 3.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a476f0cbef2745c45901c9b56a84a96c
+    m_Address: Assets/Audio/Waves/Medium Wave 8.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 00ff01b133a25174ba923261f0ed29b3
+    m_Address: Assets/Audio/Waves/Large Wave 5.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2902280ba2f871e4bbc42bfb9ea7f80c
+    m_Address: Assets/Audio/Waves/Medium Wave 5.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0815c65c7d568914aa907b888620ac15
+    m_Address: Assets/Audio/Waves/Large Wave 6.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 81eb1b0b0d0c0b545acf0ed0b3bf9829
+    m_Address: Assets/Audio/Waves/Medium Wave 1.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d8554331add8eb842b5b953fe0a3940e
+    m_Address: Assets/Audio/Waves/Medium Wave 11.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 17ef4d674a11bcf4f8b18918cc99d83e
+    m_Address: Assets/Audio/Waves/Large Wave 7.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 31061e280e82bb94aaf34a631768a1eb
+    m_Address: Assets/Audio/Waves/Medium Wave 2.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b2461ae5304e4a542bd05c517323eb1b
+    m_Address: Assets/Audio/Waves/Medium Wave 6.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fc8c2eb11911440478e77f95b41976ee
+    m_Address: Assets/Audio/Waves/Large Wave 4.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1ec51838ef78a2944892909756a47203
+    m_Address: Assets/Audio/Waves/Medium Wave 9.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: db64a7e8462e7fc48a826059bf6a44ea
+    m_Address: Assets/Audio/Waves/Medium Wave 12.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0372031a25e42084ebae111d9c2bbe24
+    m_Address: Assets/Audio/Waves/Large Wave 9.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 47b55ad2e21f1624cb878d659b345438
+    m_Address: Assets/Audio/Waves/Large Wave 3.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ea7ae4a72a3a0434f8566b400069618f
+    m_Address: Assets/Audio/Waves/Medium Wave 13.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 520c1f18b7ae2b843948931180290d4e
+    m_Address: Assets/Audio/Waves/Medium Wave 10.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: afeee1262cc3ffb48af19b7fd5e00e6f
+    m_Address: Assets/Audio/Waves/Large Wave 8.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ca24e2d76cb82c04d807363dc567eec4
+    m_Address: Assets/Audio/Waves/Medium Wave 4.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7a33fb6da216bc74ba94e66b0d49b2a5
+    m_Address: Assets/Audio/Waves/Large Wave 10.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b7429784ddb6ebc4480c6c989e9cf93b
+    m_Address: Assets/Audio/Waves/Large Wave 1.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d2491b92e23d2c046a1294190a20d8b0
+    m_Address: Assets/Audio/Waves/Small Wave 1.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4c8db48975029d24b909d5eb92af8d49
+    m_Address: Assets/Audio/Waves/Small Wave 10.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c88c9ddcd6620ea45a9e222b62a69916
+    m_Address: Assets/Audio/Waves/Small Wave 6.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e88fc7c1d0697ad42bf909a0947829d9
+    m_Address: Assets/Audio/Waves/Small Wave 15.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 787b9cf6cf779fd4f8f2d03b64ccb844
+    m_Address: Assets/Audio/Waves/Small Wave 3.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 365cbbcd1ba75a84196b2d1524fa6f8c
+    m_Address: Assets/Audio/Waves/Small Wave 7.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 72f2f42b64f4fcf419288ee89d95ada0
+    m_Address: Assets/Audio/Waves/Small Wave 12.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0bcf1d55b6bcb284f87c441b55343ea6
+    m_Address: Assets/Audio/Waves/Small Wave 4.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ee5b61af237e3694fb575d3eb199e389
+    m_Address: Assets/Audio/Waves/Small Wave 5.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 33daad135e5bbb0478c98fa7ab7c778a
+    m_Address: Assets/Audio/Waves/Small Wave 2.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0f755416e5783df4cae4d7bd45b3440e
+    m_Address: Assets/Audio/Waves/Small Wave 14.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b92f29c7d68f77241881a915428f0dae
+    m_Address: Assets/Audio/Waves/Small Wave 11.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f5b7f414dc9727043a689d9428017b2f
+    m_Address: Assets/Audio/Waves/Small Wave 8.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b74cf862db1028e44bb47eab9f9da219
+    m_Address: Assets/Audio/Waves/Small Wave 13.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5de9acc892082b0469ee61c3ddcf780e
+    m_Address: Assets/Audio/Waves/Small Wave 9.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b32361ab8822e0d41baf77e7ce66dfc0
+    m_Address: SFX/Water/SmallWaves
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eaa77121b99c594409205b2fa7e53c44
+    m_Address: SFX/Water/MediumWaves
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ceb4bd882883cff46801ec7efa95da7f
+    m_Address: SFX/Ambience/WeakWindLoop
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5b8be20dc34b34f458d459167de4bec7
+    m_Address: Assets/Audio/Ambience/Wind/Ambience_Wind_Intensity_Soft_With_Leaves_Loop.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 71b8767787526634185fe777b3c60280
+    m_Address: SFX/Special/ShipWreck
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fa788e44fe56a954789df276a874825a
+    m_Address: Assets/Audio/Special/Ambience_Place_Ship_Sailing_Loop.wav
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 using Caeca.Interfaces;
 
@@ -15,6 +16,9 @@ namespace Caeca.SoundControl
         [Header("Settings")]
         [SerializeField, Tooltip("Can player focus on this sound")] 
         private bool focusable = false;
+
+        public UnityEvent OnFocused;
+
 
         private bool isActive = false;
         private ISoundReceiving manager;
@@ -60,12 +64,18 @@ namespace Caeca.SoundControl
 
         public void Focus()
         {
-            soundVolume.TurnOn();
+            UnIgnore();
+            OnFocused?.Invoke();
         }
 
-        public void Unfocus()
+        public void Ignore()
         {
             soundVolume.TurnOff();
+        }
+
+        public void UnIgnore()
+        {
+            soundVolume.TurnOn();
         }
     }
 }

@@ -1,28 +1,74 @@
 using UnityEngine;
+using System.Collections;
+
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 using Caeca.Interfaces;
+using Caeca.ScriptableObjects;
+using Caeca.CustomAddressables;
+using Caeca.SoundControl.PlayRulesets;
+
 
 namespace Caeca.SoundControl
 {
     /// <summary>
-    /// Class that is controling the AudioSource. Changes volume, plays sounds and set if sound can be played with (bool) interface.
+    /// Class that is controling the AudioSource. Loads asset clipPack, plays sounds and set if sound can be played with (bool) interface.
     /// </summary>
     public class SoundPlayer : MonoBehaviour, GenericInterface<bool>
     {
         [Header("References")]
         [SerializeField, Tooltip("Audio source this scripts controls")]
         private AudioSource audioSource;
+        [SerializeField, Tooltip("ClipsPack asstet")]
+        private AssetReferenceAudioClipPack clipPackReference;
+        [SerializeField, Tooltip("Play sound ruleset")]
+        private PlayRuleset playRuleset;
+
         [Header("Settings")]
         [SerializeField, Tooltip("This can be set from outside via <bool> interface")]
+        
         private bool canPlay = true;
-        [SerializeField, Tooltip("Sound play settings")]
-        private SoundPack soundPack;
+        private AsyncOperationHandle<AudioClipPack> asyncOperation;
+        private AudioClipPack clipPack;
+        private int assetTimer = 0;
 
 
-        public void Tick(float _deltaTime)
+        public async void Tick(float _deltaTime)
         {
-            if(canPlay)
-                soundPack.Tick(audioSource, _deltaTime);
+            if (!asyncOperation.IsValid())
+            {
+                asyncOperation = Addressables.LoadAssetAsync<AudioClipPack>(clipPackReference);
+                asyncOperation.Completed += (clipPackOperation) =>
+                {
+                    clipPack = clipPackOperation.Result;
+                };
+                assetTimer = 10;
+                StartCoroutine(UnloadAsset());
+            }
+
+            if(!playRuleset.CanPlaySound(_deltaTime))
+            {
+                assetTimer = playRuleset.AssetTimerSetter(assetTimer, _deltaTime);
+                return;
+            }
+            
+            await asyncOperation.Task;
+            assetTimer = clipPack.GetAssetLifespan();
+
+            playRuleset.PlaySound(audioSource, clipPack, _deltaTime);
+        }
+
+        private IEnumerator UnloadAsset()
+        {
+            while (assetTimer > 0)
+            {
+                yield return new WaitForSeconds(1);
+                assetTimer--;
+            }
+            if (asyncOperation.IsValid())
+                Addressables.Release(asyncOperation);
+            playRuleset.OnAssetUnload(audioSource);
         }
 
 
@@ -33,6 +79,6 @@ namespace Caeca.SoundControl
         public void TriggerInterface(bool value)
         {
             canPlay = value;
-        }
+        } 
     }
 }

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142c66cc0c047534d94f91e1104ce6e0, type: 3}
+  m_Name: MediumWaves
+  m_EditorClassIdentifier: 
+  assetLifespan: 22
+  clips:
+  - {fileID: 8300000, guid: 81eb1b0b0d0c0b545acf0ed0b3bf9829, type: 3}
+  - {fileID: 8300000, guid: 31061e280e82bb94aaf34a631768a1eb, type: 3}
+  - {fileID: 8300000, guid: d304b85dca83fdc4e8d527ab25c827eb, type: 3}
+  - {fileID: 8300000, guid: ca24e2d76cb82c04d807363dc567eec4, type: 3}
+  - {fileID: 8300000, guid: 2902280ba2f871e4bbc42bfb9ea7f80c, type: 3}
+  - {fileID: 8300000, guid: b2461ae5304e4a542bd05c517323eb1b, type: 3}
+  - {fileID: 8300000, guid: d348d7128fd6d584c96d4ecf45d85484, type: 3}
+  - {fileID: 8300000, guid: a476f0cbef2745c45901c9b56a84a96c, type: 3}
+  - {fileID: 8300000, guid: 1ec51838ef78a2944892909756a47203, type: 3}
+  - {fileID: 8300000, guid: 520c1f18b7ae2b843948931180290d4e, type: 3}
+  - {fileID: 8300000, guid: d8554331add8eb842b5b953fe0a3940e, type: 3}
+  - {fileID: 8300000, guid: db64a7e8462e7fc48a826059bf6a44ea, type: 3}
+  - {fileID: 8300000, guid: ea7ae4a72a3a0434f8566b400069618f, type: 3}

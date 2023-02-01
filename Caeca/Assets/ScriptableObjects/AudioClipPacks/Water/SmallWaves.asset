@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142c66cc0c047534d94f91e1104ce6e0, type: 3}
+  m_Name: SmallWaves
+  m_EditorClassIdentifier: 
+  assetLifespan: 14
+  clips:
+  - {fileID: 8300000, guid: d2491b92e23d2c046a1294190a20d8b0, type: 3}
+  - {fileID: 8300000, guid: 33daad135e5bbb0478c98fa7ab7c778a, type: 3}
+  - {fileID: 8300000, guid: 787b9cf6cf779fd4f8f2d03b64ccb844, type: 3}
+  - {fileID: 8300000, guid: 0bcf1d55b6bcb284f87c441b55343ea6, type: 3}
+  - {fileID: 8300000, guid: ee5b61af237e3694fb575d3eb199e389, type: 3}
+  - {fileID: 8300000, guid: c88c9ddcd6620ea45a9e222b62a69916, type: 3}
+  - {fileID: 8300000, guid: 365cbbcd1ba75a84196b2d1524fa6f8c, type: 3}
+  - {fileID: 8300000, guid: f5b7f414dc9727043a689d9428017b2f, type: 3}
+  - {fileID: 8300000, guid: 5de9acc892082b0469ee61c3ddcf780e, type: 3}
+  - {fileID: 8300000, guid: 4c8db48975029d24b909d5eb92af8d49, type: 3}
+  - {fileID: 8300000, guid: b92f29c7d68f77241881a915428f0dae, type: 3}
+  - {fileID: 8300000, guid: 72f2f42b64f4fcf419288ee89d95ada0, type: 3}
+  - {fileID: 8300000, guid: b74cf862db1028e44bb47eab9f9da219, type: 3}
+  - {fileID: 8300000, guid: 0f755416e5783df4cae4d7bd45b3440e, type: 3}
+  - {fileID: 8300000, guid: e88fc7c1d0697ad42bf909a0947829d9, type: 3}

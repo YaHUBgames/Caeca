@@ -7,7 +7,7 @@ using Caeca.ScriptableObjects;
 namespace Caeca.SoundControl
 {
     /// <summary>
-    /// Class that handles focus logis - when and on what to focus.
+    /// Class that handles focus logic - when and on what to focus.
     /// </summary>
     public class SoundFocuser : MonoBehaviour
     {
@@ -62,7 +62,7 @@ namespace Caeca.SoundControl
             if (focusableEmitters.Count <= 0)
                 return;
             foreach (ISoundEmitting emitter in focusableEmitters)
-                emitter.Unfocus();
+                emitter.Ignore();
 
             focusableEmitters[focusedIndex].Focus();
         }
@@ -75,7 +75,7 @@ namespace Caeca.SoundControl
             if (focusableEmitters.Count <= 0)
                 return;
             foreach (ISoundEmitting emitter in focusableEmitters)
-                emitter.Focus();
+                emitter.UnIgnore();
         }
 
         public void OnSwitchChange(int _newFocusedIndex)
@@ -95,7 +95,7 @@ namespace Caeca.SoundControl
 
             if (isFocused)
             {
-                focusableEmitters[focusedIndex].Unfocus();
+                focusableEmitters[focusedIndex].Ignore();
                 focusableEmitters[_newFocusedIndex].Focus();
             }
 
@@ -108,10 +108,10 @@ namespace Caeca.SoundControl
         {
             if (isFocused)
             {
-                _soundEmitter.Unfocus();
+                _soundEmitter.Ignore();
                 return;
             }
-            _soundEmitter.Focus();
+            _soundEmitter.UnIgnore();
         }
 
         private void EmitterLeftCheck(ISoundEmitting _soundEmitter, bool _focusable)
@@ -157,8 +157,8 @@ namespace Caeca.SoundControl
                 EmitterLeftFocusCheck();
                 return;
             }
-            BasicSoundWhenFocused -= _soundEmitter.Unfocus;
-            BasicSoundWhenUnFocused -= _soundEmitter.Focus;
+            BasicSoundWhenFocused -= _soundEmitter.Ignore;
+            BasicSoundWhenUnFocused -= _soundEmitter.UnIgnore;
         }
 
         public void EmitterEntered(ISoundEmitting _soundEmitter, bool _focusable)
@@ -170,8 +170,8 @@ namespace Caeca.SoundControl
                 EmitterFirstEnteredFocusCheck();
                 return;
             }
-            BasicSoundWhenFocused += _soundEmitter.Unfocus;
-            BasicSoundWhenUnFocused += _soundEmitter.Focus;
+            BasicSoundWhenFocused += _soundEmitter.Ignore;
+            BasicSoundWhenUnFocused += _soundEmitter.UnIgnore;
         }
     }
 }

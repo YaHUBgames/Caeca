@@ -13,7 +13,8 @@ namespace Caeca.Interfaces
         public void Tick(float _deltaTime);
 
         public void Focus();
-        public void Unfocus();
+        public void Ignore();
+        public void UnIgnore();
     }
 
     public interface ISoundReceiving
