@@ -241,6 +241,42 @@ MonoBehaviour:
     m_Address: Assets/Audio/Special/Ambience_Place_Ship_Sailing_Loop.wav
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 2dd37caf6bc128745b64faed95597953
+    m_Address: SFX/EffectMusic/01.In Search Of Silence
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9c72eec677317144aa32232e590c91e6
+    m_Address: SFX/Speach/Voice001_I_Cant_See
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8274b842c55d3904a8cb55107ccab47f
+    m_Address: SFX/Speach/Voice005_That_Is_Ship_Wreck.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a3472abcad95b4d419c872b589e1dd75
+    m_Address: SFX/Speach/Voice002_Help_Please.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f08072c5718846e4f9315193a6915906
+    m_Address: SFX/Speach/Voice003_Broken_Leg.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4156849efb4ef9d48a784575721d6fdb
+    m_Address: SFX/Speach/Voice004_What_Is_That_Sound.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eea031eb7f414014096f910149ebb3d5
+    m_Address: SFX/Speach/Voice006_Not_Only_Survivor.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 187c9f1363738ca45bfebd4cf99f0204
+    m_Address: SFX/Speach/Voice007_Fixate_The_Leg.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1eb6a264fc9b06d4b8af6251923c5165
+    m_Address: SFX/Speach/Voice008_What_A_Helicopter.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 92a3f5c674b59a940a5ea730c8c2b1ea, type: 2}
   m_SchemaSet:

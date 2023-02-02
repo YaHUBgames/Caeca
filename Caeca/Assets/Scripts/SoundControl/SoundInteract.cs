@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 using Caeca.Interfaces;
 
@@ -10,6 +11,7 @@ namespace Caeca.SoundControl
     public class SoundInteract : MonoBehaviour, IInteractable
     {
         [SerializeField] private float interactDistance = 2f;
+        [SerializeField] private UnityEvent OnInteract;
 
         public Transform GetInteractableObject()
         {
@@ -21,6 +23,7 @@ namespace Caeca.SoundControl
             if((_interactor.position - transform.position).magnitude > interactDistance)
                 return false;
             Debug.Log(gameObject.name);
+            OnInteract?.Invoke();
             return true;
         }
     }

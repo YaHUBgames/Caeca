@@ -19,7 +19,7 @@ namespace Caeca.Control.SoundSystem
         [Header("Debugging")]
         [SerializeField] private DebugLogger logger;
 
-        
+
         private PlayerInputEvents input;
 
 

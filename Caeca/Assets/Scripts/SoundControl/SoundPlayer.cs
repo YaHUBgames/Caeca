@@ -47,7 +47,7 @@ namespace Caeca.SoundControl
                 StartCoroutine(UnloadAsset());
             }
 
-            if(!playRuleset.CanPlaySound(_deltaTime))
+            if(!playRuleset.CanPlaySound(_deltaTime) || !canPlay)
             {
                 assetTimer = playRuleset.AssetTimerSetter(assetTimer, _deltaTime);
                 return;

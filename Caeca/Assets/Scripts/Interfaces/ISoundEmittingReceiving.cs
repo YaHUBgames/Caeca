@@ -6,7 +6,7 @@ namespace Caeca.Interfaces
     {
         public bool IsActive();
         public Transform GetEmmiter();
-        
+
         public bool ActivateEmitter(ISoundReceiving _manager);
         public bool DeactivateEmitter();
 
