@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142c66cc0c047534d94f91e1104ce6e0, type: 3}
+  m_Name: SandFootsteps
+  m_EditorClassIdentifier: 
+  assetLifespan: 5
+  clips:
+  - {fileID: 8300000, guid: 8f15ede7e78b8d14198b3169f9f017d8, type: 3}
+  - {fileID: 8300000, guid: 0f647a3e7cf5d984da68cc7c6f3d9602, type: 3}
+  - {fileID: 8300000, guid: f54785b0943ff3344ac9066df3f3993e, type: 3}
+  - {fileID: 8300000, guid: 6cb7117128a5e1f44a55d806eeb6577a, type: 3}
+  - {fileID: 8300000, guid: c15ccee32ebb6ac45954930ca01e6d4b, type: 3}
+  - {fileID: 8300000, guid: 6ae92f128c451b84da7691252248de8a, type: 3}
+  - {fileID: 8300000, guid: 27b8cf530e6981f43b1a06f688b6043b, type: 3}
+  - {fileID: 8300000, guid: 749d3f9565af56745b2f50ab2e4ab15f, type: 3}
+  - {fileID: 8300000, guid: d2b0795700522084aad716a7affbd29c, type: 3}
+  - {fileID: 8300000, guid: 8e47d7ee294a05247849057930dae9e4, type: 3}

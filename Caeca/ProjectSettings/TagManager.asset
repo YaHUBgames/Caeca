@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
+  - Terrain
+  - Wooden
+  - Stone
+  - Metalic
   layers:
   - Default
   - TransparentFX

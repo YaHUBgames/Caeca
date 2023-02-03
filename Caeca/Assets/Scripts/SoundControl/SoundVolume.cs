@@ -10,7 +10,7 @@ namespace Caeca.SoundControl
     {
         [Header("References")]
         [SerializeField, Tooltip("Audio source this scripts controls")]
-        private AudioSource audioSource;
+        private AudioSource[] audioSources;
         [Header("Settings")]
         [SerializeField, Range(0f, 1f), Tooltip("Max volume this audio can be set to")]
         private float maxVolume = 1f;
@@ -50,7 +50,8 @@ namespace Caeca.SoundControl
                 if (Mathf.Abs(delta) <= SoundEmittingSettings.volumeTransitionDeltaMin)
                     volume = _volume;
 
-                audioSource.volume = volume;
+                foreach (AudioSource source in audioSources)
+                    source.volume = volume;
             }
         }
     }

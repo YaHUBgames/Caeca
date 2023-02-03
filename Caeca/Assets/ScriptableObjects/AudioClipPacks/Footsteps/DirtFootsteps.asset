@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142c66cc0c047534d94f91e1104ce6e0, type: 3}
+  m_Name: DirtFootsteps
+  m_EditorClassIdentifier: 
+  assetLifespan: 5
+  clips:
+  - {fileID: 8300000, guid: 0978b1832f598df4d9e85c81da9af8cc, type: 3}
+  - {fileID: 8300000, guid: c773f99a5b81a8444a79ce8a14519e4b, type: 3}
+  - {fileID: 8300000, guid: b5b3776d7ec361e43a2ac926c22aa0f8, type: 3}
+  - {fileID: 8300000, guid: 1018550e98417364c9ac8c051b2c22be, type: 3}
+  - {fileID: 8300000, guid: 78943b18c5784cb43a8cc0aeaf40d4cc, type: 3}
+  - {fileID: 8300000, guid: 97e7752b50d5cc244a7ad5dbb5e92240, type: 3}
+  - {fileID: 8300000, guid: 11528fa5fd0d7a948bc195988ed909ff, type: 3}
+  - {fileID: 8300000, guid: be56c83b33a27f04c9e4efdb0b470a88, type: 3}
+  - {fileID: 8300000, guid: dcedabb8d27df8841b46fa781336b68e, type: 3}
+  - {fileID: 8300000, guid: fe3346d0b2567e64ca64b38265c68c7e, type: 3}

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142c66cc0c047534d94f91e1104ce6e0, type: 3}
+  m_Name: WaterFootsteps
+  m_EditorClassIdentifier: 
+  assetLifespan: 5
+  clips:
+  - {fileID: 8300000, guid: 9725398be837aba4ead41941c86a969d, type: 3}
+  - {fileID: 8300000, guid: 807658beb9385674594fb3b157f51e49, type: 3}
+  - {fileID: 8300000, guid: 8484def200b31be48b77c50b27775fff, type: 3}
+  - {fileID: 8300000, guid: 3a8a0953138dba54a927383d06d671c3, type: 3}
+  - {fileID: 8300000, guid: 5035e15cc60bce24a8755e5daead830d, type: 3}
+  - {fileID: 8300000, guid: 0905d2f1e3a5df9488aae178a4c150b7, type: 3}
+  - {fileID: 8300000, guid: f90cd4841e9c2de47ae998cea63e6c82, type: 3}
+  - {fileID: 8300000, guid: f454f1d831c860947b889a1e80f47dc4, type: 3}
+  - {fileID: 8300000, guid: f22beaa8dbdc45e428b58d28a2954234, type: 3}
+  - {fileID: 8300000, guid: dd26eb6fcd4bc2c47983965e8c45953e, type: 3}
+  - {fileID: 8300000, guid: 77571def0ad1a204ea33d0fd6a2edf14, type: 3}
+  - {fileID: 8300000, guid: 35d477903a44e3047b3caa047a9ad655, type: 3}
+  - {fileID: 8300000, guid: 604f49c3ee4274744999929ea6f6191f, type: 3}
+  - {fileID: 8300000, guid: 83ebc702ae0248441be8a537ca6bb715, type: 3}
+  - {fileID: 8300000, guid: 8cd49447f5e8aaa439cffb5b83ef6872, type: 3}

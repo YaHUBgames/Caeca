@@ -15,6 +15,7 @@ namespace Caeca.SoundControl
     /// <summary>
     /// Class that is controling the AudioSource. Loads asset clipPack, plays sounds and set if sound can be played with (bool) interface.
     /// </summary>
+    [RequireComponent(typeof(PlayRuleset))]
     public class SoundPlayer : MonoBehaviour, GenericInterface<bool>
     {
         [Header("References")]

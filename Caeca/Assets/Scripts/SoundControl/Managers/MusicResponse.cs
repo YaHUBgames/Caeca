@@ -13,7 +13,7 @@ namespace Caeca.SoundControl.Managers
 
         public void Respond()
         {
-            MusicManager.Instance.Play(clipReference);
+            MusicManager.instance.Play(clipReference);
         }
     }
 }

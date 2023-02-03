@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142c66cc0c047534d94f91e1104ce6e0, type: 3}
+  m_Name: LeafFootsteps
+  m_EditorClassIdentifier: 
+  assetLifespan: 5
+  clips:
+  - {fileID: 8300000, guid: c993988c0d4f8974099f65a5d51997f8, type: 3}
+  - {fileID: 8300000, guid: e020ffe62ca602640855ab8b9bf478c9, type: 3}
+  - {fileID: 8300000, guid: c26f97e939d1c0e44b1a60b29b02087a, type: 3}
+  - {fileID: 8300000, guid: 3a352eb9af6fa534185a97872939b005, type: 3}
+  - {fileID: 8300000, guid: c4956922a22728f49b75818909b6e526, type: 3}
+  - {fileID: 8300000, guid: d28faf1f636e0b74ca66b4b1d8161e4e, type: 3}
+  - {fileID: 8300000, guid: 60257f56497e2874db14b79553f39630, type: 3}
+  - {fileID: 8300000, guid: d77176f6d9a45714fb12fe7c4a3cff5c, type: 3}
+  - {fileID: 8300000, guid: 64a171533badb1042a8adcc5fcc13eea, type: 3}
+  - {fileID: 8300000, guid: db34114d4ed1aa041a937193de635054, type: 3}

@@ -8,7 +8,8 @@ namespace Caeca.Control
     /// </summary>
     public class SequentialChildEnabler : MonoBehaviour
     {
-        [SerializeField] private float delay = 0.5f;
+        [SerializeField] private float minDelay = 0.5f;
+        [SerializeField] private float maxDelay = 0.5f;
 
         private void Start() {
             StartCoroutine(EnableChildren());
@@ -19,7 +20,7 @@ namespace Caeca.Control
             foreach (Transform child in transform)
             {
                 child.gameObject.SetActive(true);
-                yield return new WaitForSeconds(delay);
+                yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));
             }
         }
     }

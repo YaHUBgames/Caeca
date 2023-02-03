@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: clipPackReference.m_AssetGUID
       value: b32361ab8822e0d41baf77e7ce66dfc0
       objectReference: {fileID: 0}
+    - target: {fileID: 4968401269412499495, guid: f84dd5438dfcf634db954e462cd2e9ae,
+        type: 3}
+      propertyPath: maxVolume
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5232980362055853291, guid: f84dd5438dfcf634db954e462cd2e9ae,
         type: 3}
       propertyPath: randomMaxDelay
@@ -113,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71f2eb84b04fe884f8d34b29aa3d0875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomMinPitch: 1
-  randomMaxPitch: 1
+  randomMinPitch: 0.95
+  randomMaxPitch: 1.05
   randomMinDelay: 6
   randomMaxDelay: 12

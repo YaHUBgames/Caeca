@@ -14,7 +14,7 @@ namespace Caeca.SoundControl.Managers
     /// </summary>
     public class MusicManager : MonoBehaviour
     {
-        public static MusicManager Instance { private set; get; }
+        public static MusicManager instance { private set; get; }
 
         [Header("References")]
         [SerializeField, Tooltip("Audio source this scripts controls")]
@@ -22,12 +22,12 @@ namespace Caeca.SoundControl.Managers
 
         private void Awake()
         {
-            if (MusicManager.Instance != null)
+            if (MusicManager.instance != null)
             {
                 Destroy(this);
                 return;
             }
-            MusicManager.Instance = this;
+            MusicManager.instance = this;
         }
 
         private List<AssetReferenceAudioClip> playedClipsReferences = new List<AssetReferenceAudioClip>();

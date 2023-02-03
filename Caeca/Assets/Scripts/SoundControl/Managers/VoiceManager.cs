@@ -14,7 +14,7 @@ namespace Caeca.SoundControl.Managers
     /// </summary>
     public class VoiceManager : MonoBehaviour
     {
-        public static VoiceManager Instance { private set; get; }
+        public static VoiceManager instance { private set; get; }
 
         [Header("References")]
         [SerializeField, Tooltip("Audio source this scripts controls")]
@@ -22,13 +22,13 @@ namespace Caeca.SoundControl.Managers
 
         private void Awake()
         {
-            if (VoiceManager.Instance != null)
+            if (VoiceManager.instance != null)
             {
                 Destroy(this);
                 return;
             }
             VoiceManager.
-            Instance = this;
+            instance = this;
         }
 
 

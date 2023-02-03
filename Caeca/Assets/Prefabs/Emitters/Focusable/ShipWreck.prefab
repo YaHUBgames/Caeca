@@ -24,6 +24,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5966662703882113653, guid: d763d150dec4be648836d9bf85d36ca3,
         type: 3}
+      propertyPath: Priority
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 5966662703882113653, guid: d763d150dec4be648836d9bf85d36ca3,
+        type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.size
       value: 4
       objectReference: {fileID: 0}

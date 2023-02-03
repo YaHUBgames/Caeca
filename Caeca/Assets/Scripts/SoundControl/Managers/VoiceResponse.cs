@@ -14,7 +14,7 @@ namespace Caeca.SoundControl.Managers
 
         public void Respond()
         {
-            VoiceManager.Instance.Play(clipReference, delayTime);
+            VoiceManager.instance.Play(clipReference, delayTime);
         }
     }
 }

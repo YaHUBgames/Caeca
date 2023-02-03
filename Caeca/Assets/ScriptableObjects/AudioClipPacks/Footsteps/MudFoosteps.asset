@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142c66cc0c047534d94f91e1104ce6e0, type: 3}
+  m_Name: MudFoosteps
+  m_EditorClassIdentifier: 
+  assetLifespan: 5
+  clips:
+  - {fileID: 8300000, guid: a01622d441ab32141a9e0ed3ad3b5944, type: 3}
+  - {fileID: 8300000, guid: 3ae7424c4d69c0c48acc64522d669a2c, type: 3}
+  - {fileID: 8300000, guid: 2367fa34f05d40243979b88c83928607, type: 3}
+  - {fileID: 8300000, guid: 82806cf765483bb4c9402e75c9eaea54, type: 3}
+  - {fileID: 8300000, guid: 34070a84c60df084ab54870f41251a9d, type: 3}
+  - {fileID: 8300000, guid: f069b256bec2ffc48b0b8b4a6c486169, type: 3}
+  - {fileID: 8300000, guid: b6bc33449a9d6b444bc066a570328d5a, type: 3}
+  - {fileID: 8300000, guid: 0036c599dcd30984bac1972e36b9e27a, type: 3}
+  - {fileID: 8300000, guid: afa1dcb8c5bf70a46a888961be54a3e6, type: 3}
+  - {fileID: 8300000, guid: 84ce9ae46f089d942bc5c9c5396f57b7, type: 3}
