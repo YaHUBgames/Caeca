@@ -36,7 +36,7 @@ namespace Caeca.vfxControl
             effect.SetInt("SonarSize", sonarVisualSize);
             effect.SetFloat("SonarLife", sonarVisualLife);
         }
-        
+
 
         /// <summary>
         /// Triggers the soner effect event.
@@ -44,7 +44,8 @@ namespace Caeca.vfxControl
         /// <param name="value">Trigger the event if true</param>
         public void TriggerInterface(bool value)
         {
-            if (value){
+            if (value)
+            {
                 effect.SetInt(nameID1, (int)Mathf.Repeat(360 - sonarVisualRotationTransform.localEulerAngles.y, 360));
                 effect.SendEvent(nameID2);
             }

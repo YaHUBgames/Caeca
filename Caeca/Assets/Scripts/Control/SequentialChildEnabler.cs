@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 namespace Caeca.Control
-{   
+{
     /// <summary>
     /// Slowly enables all children of this transform
     /// </summary>
@@ -11,7 +11,8 @@ namespace Caeca.Control
         [SerializeField] private float minDelay = 0.5f;
         [SerializeField] private float maxDelay = 0.5f;
 
-        private void Start() {
+        private void Start()
+        {
             StartCoroutine(EnableChildren());
         }
 

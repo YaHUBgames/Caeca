@@ -13,7 +13,7 @@ using Caeca.SoundControl.PlayRulesets;
 namespace Caeca.SoundControl
 {
     /// <summary>
-    /// Class that is controling the AudioSource. Loads asset clipPack, plays sounds and set if sound can be played with (bool) interface.
+    /// Class that is controling the AudioSource with PlayRuleset. Loads asset clipPack. Set if sound can be played with (bool) interface.
     /// </summary>
     [RequireComponent(typeof(PlayRuleset))]
     public class SoundPlayer : MonoBehaviour, GenericInterface<bool>
@@ -28,7 +28,7 @@ namespace Caeca.SoundControl
 
         [Header("Settings")]
         [SerializeField, Tooltip("This can be set from outside via <bool> interface")]
-        
+
         private bool canPlay = true;
         private AsyncOperationHandle<AudioClipPack> asyncOperation;
         private AudioClipPack clipPack;
@@ -48,12 +48,12 @@ namespace Caeca.SoundControl
                 StartCoroutine(UnloadAsset());
             }
 
-            if(!playRuleset.CanPlaySound(_deltaTime) || !canPlay)
+            if (!playRuleset.CanPlaySound(_deltaTime) || !canPlay)
             {
                 assetTimer = playRuleset.AssetTimerSetter(assetTimer, _deltaTime);
                 return;
             }
-            
+
             await asyncOperation.Task;
             assetTimer = clipPack.GetAssetLifespan();
 
@@ -80,6 +80,6 @@ namespace Caeca.SoundControl
         public void TriggerInterface(bool value)
         {
             canPlay = value;
-        } 
+        }
     }
 }

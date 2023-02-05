@@ -53,7 +53,7 @@ namespace Caeca.SoundControl
             }
             TurnOff();
         }
- 
+
         private void TurnOn()
         {
             isFocused = true;

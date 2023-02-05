@@ -9,13 +9,16 @@ using Caeca.CustomAddressables;
 
 namespace Caeca.TerrainControl
 {
+    /// <summary>
+    /// Loads all footstep soundPacks and makes them static accessible.
+    /// </summary>
     public class GroundTypeSoundPackLoader : MonoBehaviour
     {
         public static GroundTypeSoundPackLoader instance { private set; get; }
 
         [SerializeField] private AssetReferenceAudioClipPack[] footstepClipPacks;
 
-        
+
         public List<AudioClipPack> clipPacks = new List<AudioClipPack>();
         [HideInInspector]
         public bool allLoaded = false;

@@ -5,22 +5,25 @@ namespace Caeca.TerrainControl
     public enum GroundTypes
     {
         NOTHING = -4, NO_GROUND = -2, DEFAULT_GROUND = -1,
-        DIRT, GRASS, GRAVEL, LEAVES, METAL, MUD, SAND, STONE, WATER, WOOD,
+        DIRT, GRASS, GRAVEL, LEAVES, METAL, MUD, SAND, STONE, WATER, WOOD,  //In alphabetical order
         SIZEOF
-    };  //must be in alphabetical order
+    };  
 
-    public class TerrainManager : MonoBehaviour
+    /// <summary>
+    /// With Terrain/Transform object and world Position gets ground type float array.
+    /// </summary>
+    public class TerrainTextureManager : MonoBehaviour
     {
-        public static TerrainManager instance { private set; get; }
+        public static TerrainTextureManager instance { private set; get; }
 
         private void Awake()
         {
-            if (TerrainManager.instance is not null)
+            if (TerrainTextureManager.instance is not null)
             {
                 Destroy(this);
                 return;
             }
-            TerrainManager.instance = this;
+            TerrainTextureManager.instance = this;
         }
 
         public static Vector2Int GetAlphaPositionOnTerrain(Vector3 _worldPosition, Terrain _terrain)
@@ -40,7 +43,7 @@ namespace Caeca.TerrainControl
 
         public static float[] GetTerrainTextureValuesOnPosition(Vector3 _worldPosition, Terrain _terrain)
         {
-            Vector2Int alphaPosition = TerrainManager.GetAlphaPositionOnTerrain(_worldPosition, _terrain);
+            Vector2Int alphaPosition = TerrainTextureManager.GetAlphaPositionOnTerrain(_worldPosition, _terrain);
 
             float[,,] alphaMap = _terrain.terrainData.GetAlphamaps(alphaPosition.x, alphaPosition.y, 1, 1);
 

@@ -9,14 +9,15 @@ namespace Caeca.Control
     /// </summary>
     public class MonobehaviourSwitch : MonoBehaviour, GenericInterface<int>
     {
-        [SerializeField, Tooltip("Any monobehaviour that can be disabled")] 
+        [SerializeField, Tooltip("Any monobehaviour that can be disabled")]
         private MonoBehaviour[] monoBehavioursToSwitch;
 
         [SerializeField, Tooltip("Enabled monobehaviour index")]
         private int currentIndex = 0;
 
         [ContextMenu("Refresh")]
-        void RefreshMonos(){
+        void RefreshMonos()
+        {
             foreach (MonoBehaviour mono in monoBehavioursToSwitch)
                 mono.enabled = false;
             monoBehavioursToSwitch[currentIndex].enabled = true;
@@ -29,12 +30,13 @@ namespace Caeca.Control
         /// <param name="value">New index</param>
         public void TriggerInterface(int value)
         {
-            if(value == currentIndex)
+            if (value == currentIndex)
                 return;
             SetNewIndex(value);
         }
 
-        private void Awake() {
+        private void Awake()
+        {
             RefreshMonos();
         }
 

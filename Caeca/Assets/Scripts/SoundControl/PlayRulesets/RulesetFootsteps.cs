@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using Caeca.TerrainControl;
@@ -7,6 +6,9 @@ using Caeca.ScriptableObjects;
 
 namespace Caeca.SoundControl.PlayRulesets
 {
+    /// <summary>
+    /// Plays sound left/right according to the distance moved.
+    /// </summary>
     [RequireComponent(typeof(GroundedChecker))]
     public class RulesetFootsteps : PlayRuleset
     {

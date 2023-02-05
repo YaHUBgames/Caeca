@@ -21,7 +21,7 @@ namespace Caeca.SoundControl.PlayRulesets
 
         public virtual void PlaySound(AudioSource _source, AudioClipPack _clipPack, float _deltaTime)
         {
-            
+
         }
 
         public virtual void OnAssetUnload(AudioSource _source)

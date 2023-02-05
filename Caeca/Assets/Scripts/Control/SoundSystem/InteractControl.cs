@@ -46,7 +46,7 @@ namespace Caeca.Control.SoundSystem
             doInteract.InvokeSync();
             if (soundInteracter.closestInteractable is not null)
             {
-                if(soundInteracter.closestInteractable.Interact())
+                if (soundInteracter.closestInteractable.Interact())
                 {
                     logger.Log("Interacted");
                     return;

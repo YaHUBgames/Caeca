@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Caeca.TerrainControl
 {
+    /// <summary>
+    /// Gets ground terrain or object and iths ground values.
+    /// </summary>
     public class GroundedChecker : MonoBehaviour
     {
         [Header("Ground check settings")]
@@ -28,7 +29,7 @@ namespace Caeca.TerrainControl
                 isOnTerrain = standingOn.CompareTag("Terrain");
 
                 if (isOnTerrain)
-                    groundValues = TerrainManager.GetTerrainTextureValuesOnPosition(hit.point, standingOn.GetComponent<Terrain>());
+                    groundValues = TerrainTextureManager.GetTerrainTextureValuesOnPosition(hit.point, standingOn.GetComponent<Terrain>());
 
                 return true;
             }
@@ -39,7 +40,7 @@ namespace Caeca.TerrainControl
         public float GetGroundValueOfType(GroundTypes _groundType)
         {
             if (isGrounded)
-                return TerrainManager.GetGroundValueOfType(_groundType, groundValues, isOnTerrain, standingOn);
+                return TerrainTextureManager.GetGroundValueOfType(_groundType, groundValues, isOnTerrain, standingOn);
             return 0;
         }
     }

@@ -28,7 +28,8 @@ namespace Caeca.SoundControl
         private bool doDirect = false;
 
 
-        private void OnValidate() {
+        private void OnValidate()
+        {
             foreach (InterfaceObject<GenericInterface<Transform>> interfaceObject in setNewTarget)
                 interfaceObject.OnValidate(this);
         }
@@ -72,14 +73,14 @@ namespace Caeca.SoundControl
             foreach (IInteractable interactable in interactableEmitters)
             {
                 float distance = (interactable.GetInteractableObject().position - interactingObject.position).sqrMagnitude;
-                if(distance < smallestDistance)
+                if (distance < smallestDistance)
                 {
                     smallestDistance = distance;
                     newClosestInteractable = interactable;
                 }
             }
             closestInteractable = newClosestInteractable;
-            if(closestInteractable is null)
+            if (closestInteractable is null)
             {
                 SetNewTarget(defaultTarget);
                 return;

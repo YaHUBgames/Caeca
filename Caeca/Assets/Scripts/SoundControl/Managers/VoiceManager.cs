@@ -44,7 +44,7 @@ namespace Caeca.SoundControl.Managers
         {
             if (playedClipsReferences.Contains(_clipReference))
                 return;
-            if(!_repeatable)
+            if (!_repeatable)
                 playedClipsReferences.Add(_clipReference);
 
             playQueue.Enqueue(new DelayClipEntry(_clipReference, _delay));

@@ -88,7 +88,7 @@ namespace Caeca.SoundControl
         /// <param name="value3">Shift value.</param>
         public void TriggerInterface(float[] value1, float value2, float value3)
         {
-            if(!doPlay.value)
+            if (!doPlay.value)
                 return;
             for (int i = 0; i < audioSources.Length; i++)
             {
@@ -104,7 +104,7 @@ namespace Caeca.SoundControl
         /// <param name="value">New volume for all audio sources</param>
         public void TriggerInterface(float value)
         {
-            if(!doPlay.value)
+            if (!doPlay.value)
                 return;
             for (int i = 0; i < audioSources.Length; i++)
                 volume[i] = Mathf.Clamp(value, 0, 1);

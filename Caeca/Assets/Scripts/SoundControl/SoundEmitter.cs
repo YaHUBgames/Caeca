@@ -14,7 +14,7 @@ namespace Caeca.SoundControl
         [SerializeField] private SoundPlayer soundPlayer;
         [SerializeField] private SoundVolume soundVolume;
         [Header("Settings")]
-        [SerializeField, Tooltip("Can player focus on this sound")] 
+        [SerializeField, Tooltip("Can player focus on this sound")]
         private bool focusable = false;
 
         public UnityEvent OnFocused;
