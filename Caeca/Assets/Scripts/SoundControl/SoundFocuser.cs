@@ -39,7 +39,14 @@ namespace Caeca.SoundControl
 
         public Transform GetCurrentTarget()
         {
-            return focusableEmitters[focusedIndex].GetEmmiter();
+            if (HasAnyTarget())
+                return focusableEmitters[focusedIndex].GetEmmiter();
+            return null;
+        }
+
+        public bool HasAnyTarget()
+        {
+            return focusableEmitters.Count > 0;
         }
 
         public void OnControlChange(bool _isFocused)
@@ -59,7 +66,7 @@ namespace Caeca.SoundControl
             isFocused = true;
             BasicSoundWhenFocused?.Invoke();
 
-            if (focusableEmitters.Count <= 0)
+            if (!HasAnyTarget())
                 return;
             foreach (ISoundEmitting emitter in focusableEmitters)
                 emitter.Ignore();
@@ -72,7 +79,7 @@ namespace Caeca.SoundControl
             isFocused = false;
             BasicSoundWhenUnFocused?.Invoke();
 
-            if (focusableEmitters.Count <= 0)
+            if (!HasAnyTarget())
                 return;
             foreach (ISoundEmitting emitter in focusableEmitters)
                 emitter.UnIgnore();
@@ -89,7 +96,6 @@ namespace Caeca.SoundControl
                 _newFocusedIndex = 0;
             if (_newFocusedIndex < 0)
                 _newFocusedIndex = Mathf.Clamp(focusableEmitters.Count - 1, 0, focusableEmitters.Count);
-
             if (_newFocusedIndex == focusedIndex)
                 return;
 

@@ -15,12 +15,26 @@ namespace Caeca.Control
         [SerializeField, Tooltip("Enabled monobehaviour index")]
         private int currentIndex = 0;
 
+
+        private void Awake()
+        {
+            RefreshMonos();
+        }
+
+
         [ContextMenu("Refresh")]
         void RefreshMonos()
         {
             foreach (MonoBehaviour mono in monoBehavioursToSwitch)
                 mono.enabled = false;
             monoBehavioursToSwitch[currentIndex].enabled = true;
+        }
+
+        private void SetNewIndex(int newIndex)
+        {
+            monoBehavioursToSwitch[currentIndex].enabled = false;
+            monoBehavioursToSwitch[newIndex].enabled = true;
+            currentIndex = newIndex;
         }
 
 
@@ -33,18 +47,6 @@ namespace Caeca.Control
             if (value == currentIndex)
                 return;
             SetNewIndex(value);
-        }
-
-        private void Awake()
-        {
-            RefreshMonos();
-        }
-
-        private void SetNewIndex(int newIndex)
-        {
-            monoBehavioursToSwitch[currentIndex].enabled = false;
-            monoBehavioursToSwitch[newIndex].enabled = true;
-            currentIndex = newIndex;
         }
     }
 }

@@ -9,18 +9,16 @@ using Caeca.ScriptableObjects;
 namespace Caeca.Control.SoundSystem
 {
     /// <summary>
-    /// Controls the interact action.
+    /// Controls the interact action mechanics.
     /// </summary>
     public class InteractControl : MonoBehaviour
     {
         [Header("Controls")]
         [SerializeField] private VoidSO doInteract = default;
+        [SerializeField] private SoundInteracter soundInteracter;
 
         [Header("Debugging")]
         [SerializeField] private DebugLogger logger;
-
-        [SerializeField] private SoundInteracter soundInteracter;
-
 
 
         private PlayerInputEvents input;
@@ -42,17 +40,14 @@ namespace Caeca.Control.SoundSystem
 
         public void OnInteractPerformed(InputAction.CallbackContext context)
         {
-            logger.Log("Interacting");
             doInteract.InvokeSync();
-            if (soundInteracter.closestInteractable is not null)
+
+            if (soundInteracter.Interact())
             {
-                if (soundInteracter.closestInteractable.Interact())
-                {
-                    logger.Log("Interacted");
-                    return;
-                }
-                logger.Log("Nothing to interact with nearby");
+                logger.Log("Interacted");
+                return;
             }
+            logger.Log("Nothing to interact with nearby");
         }
     }
 }

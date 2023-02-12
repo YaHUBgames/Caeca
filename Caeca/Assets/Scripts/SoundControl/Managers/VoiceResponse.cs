@@ -11,10 +11,12 @@ namespace Caeca.SoundControl.Managers
     {
         [SerializeField] private AssetReferenceAudioClip clipReference;
         [SerializeField] private float delayTime;
+        [SerializeField] private bool repeatable = false;
+        [SerializeField] private bool rewritable = false;
 
         public void Respond()
         {
-            VoiceManager.instance.Play(clipReference, delayTime);
+            VoiceManager.instance.Play(clipReference, delayTime, repeatable, rewritable);
         }
     }
 }

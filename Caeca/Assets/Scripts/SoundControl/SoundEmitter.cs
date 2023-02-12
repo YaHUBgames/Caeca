@@ -24,7 +24,7 @@ namespace Caeca.SoundControl
         private ISoundReceiving manager;
 
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             manager?.EmitterLeft((ISoundEmitting)this, focusable);
             isActive = false;

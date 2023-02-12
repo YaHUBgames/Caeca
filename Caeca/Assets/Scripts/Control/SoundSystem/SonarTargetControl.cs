@@ -11,6 +11,7 @@ namespace Caeca.Control.SoundSystem
     /// </summary>
     public class SonarTargetControl : MonoBehaviour
     {
+        [Header("Controls")]
         [SerializeField] private BoolSO focusControl = default;
         [SerializeField] private VoidSO doInteract;
 
@@ -39,12 +40,6 @@ namespace Caeca.Control.SoundSystem
         }
 
 
-        public void OnInteract()
-        {
-            if (focusControl.value)
-                GetNewTarget();
-        }
-
         private void GetNewTarget()
         {
             Transform newTarget = soundFocuser.GetCurrentTarget();
@@ -57,6 +52,13 @@ namespace Caeca.Control.SoundSystem
         {
             foreach (InterfaceObject<GenericInterface<Transform>> interfaceObject in setNewTarget)
                 interfaceObject.intrfs.TriggerInterface(_newTarget);
+        }
+
+
+        public void OnInteract()
+        {
+            if (focusControl.value)
+                GetNewTarget();
         }
     }
 }

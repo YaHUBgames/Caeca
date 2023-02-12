@@ -8,7 +8,7 @@ using Caeca.ScriptableObjects;
 namespace Caeca.Control.SoundSystem
 {
     /// <summary>
-    /// Takes player input and controls sound orientation.
+    /// Takes player input and controls sound orientation mechanics.
     /// </summary>
     public class ControlSoundOrientation : MonoBehaviour
     {

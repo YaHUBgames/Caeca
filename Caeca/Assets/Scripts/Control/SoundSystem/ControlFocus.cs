@@ -8,7 +8,7 @@ using Caeca.ScriptableObjects;
 namespace Caeca.Control.SoundSystem
 {
     /// <summary>
-    /// Takes player input and controls focus.
+    /// Takes player input and controls focus mechanics.
     /// </summary>
     public class ControlFocus : MonoBehaviour
     {

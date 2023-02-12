@@ -8,7 +8,7 @@ using Caeca.ScriptableObjects;
 namespace Caeca.Control.SoundSystem
 {
     /// <summary>
-    /// Takes player input and controls direct.
+    /// Takes player input and controls direct mechanics.
     /// </summary>
     public class ControlDirect : MonoBehaviour
     {

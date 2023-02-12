@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce18baa8ff55aff4e80d9a842df5280a, type: 3}
   m_Name: Orientation Look At Logger
   m_EditorClassIdentifier: 
-  showLog: 1
+  showLog: 0
   showLogWarning: 0
   showLogError: 0
   showDebugDraws: 1

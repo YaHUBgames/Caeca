@@ -8,7 +8,7 @@ using Caeca.ScriptableObjects;
 namespace Caeca.Control.SoundSystem
 {
     /// <summary>
-    /// Takes player input and controls radar.
+    /// Takes player input and controls sonar mechanics.
     /// </summary>
     public class ControlSonar : MonoBehaviour
     {

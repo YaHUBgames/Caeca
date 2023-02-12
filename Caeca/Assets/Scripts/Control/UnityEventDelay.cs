@@ -11,15 +11,17 @@ namespace Caeca.Control
     {
         public UnityEvent OnDelayedEvent;
 
-        public void DelayEvent(float _delay)
-        {
-            StartCoroutine(Delay(_delay));
-        }
 
         private IEnumerator Delay(float _delay)
         {
             yield return new WaitForSeconds(_delay);
             OnDelayedEvent?.Invoke();
+        }
+        
+
+        public void DelayEvent(float _delay)
+        {
+            StartCoroutine(Delay(_delay));
         }
     }
 }

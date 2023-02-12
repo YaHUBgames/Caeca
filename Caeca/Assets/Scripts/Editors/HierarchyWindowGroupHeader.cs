@@ -19,10 +19,24 @@ namespace Caeca.CustomEditors
         {
             var gameObject = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
 
-            if (gameObject != null && gameObject.name.StartsWith("---", System.StringComparison.Ordinal))
+            if (gameObject is null)
+                return;
+
+            OnSpecialTextToColor(gameObject, "---", selectionRect, Color.gray);
+            OnSpecialTextToColor(gameObject, "-white-", selectionRect, Color.white);
+            OnSpecialTextToColor(gameObject, "-black-", selectionRect, Color.black);
+            OnSpecialTextToColor(gameObject, "-red-", selectionRect, Color.red);
+            OnSpecialTextToColor(gameObject, "-green-", selectionRect, Color.green);
+            OnSpecialTextToColor(gameObject, "-blue-", selectionRect, Color.blue);
+            OnSpecialTextToColor(gameObject, "-yellow-", selectionRect, Color.yellow);
+        }
+
+        static void OnSpecialTextToColor(GameObject _gameObject, string _startsWith, Rect _selectionRect, Color _color)
+        {
+            if (_gameObject.name.StartsWith(_startsWith, System.StringComparison.Ordinal))
             {
-                EditorGUI.DrawRect(selectionRect, Color.gray);
-                EditorGUI.DropShadowLabel(selectionRect, gameObject.name.Replace("-", "").ToUpperInvariant());
+                EditorGUI.DrawRect(_selectionRect, _color);
+                EditorGUI.DropShadowLabel(_selectionRect, _gameObject.name.Replace(_startsWith, "").ToUpperInvariant());
             }
         }
     }

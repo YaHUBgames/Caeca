@@ -12,12 +12,11 @@ namespace Caeca.SoundControl
     /// </summary>
     public class SoundInteracter : MonoBehaviour
     {
-        [Header("Controls")]
-        [SerializeField] private BoolSO doPlayDirectOrientation = default;
-
         [Header("Settings")]
         [SerializeField] private Transform interactingObject;
         [SerializeField] private Transform defaultTarget;
+        [SerializeField] private float dotProductMinimumForInteraction = 0.8f;
+        [SerializeField] private LayerMask directLineOfSightLayerMask;
 
         [Header("OUTPUT")]
         [SerializeField, Tooltip("<Transform> -> New target for direct")]
@@ -25,7 +24,6 @@ namespace Caeca.SoundControl
 
         private List<IInteractable> interactableEmitters = new List<IInteractable>();
         public IInteractable closestInteractable { get; private set; } = null;
-        private bool doDirect = false;
 
 
         private void OnValidate()
@@ -34,51 +32,57 @@ namespace Caeca.SoundControl
                 interfaceObject.OnValidate(this);
         }
 
-        private void Awake()
-        {
-            doPlayDirectOrientation.OnVarSync += OnDirectControlChange;
-        }
-
-        private void OnDisable()
-        {
-            doPlayDirectOrientation.OnVarSync -= OnDirectControlChange;
-        }
-
         private void Start()
         {
-            StartCoroutine(CheckInteractables());
+            StartCoroutine(CheckInteractablesLoop());
         }
 
 
-        public void OnDirectControlChange(bool _doDirect)
+        public bool HasAnyTarget()
         {
-            doDirect = _doDirect;
+            return closestInteractable is not null;
         }
 
-        private IEnumerator CheckInteractables()
+        public bool Interact()
+        {
+            if (closestInteractable is null)
+                return false;
+            if (!TargetDotProductCheckSuccessful())
+                return false;
+            if (!closestInteractable.Interact(transform))
+                return false;
+            closestInteractable = null;
+            return true;
+        }
+
+
+        private IEnumerator CheckInteractablesLoop()
         {
             yield return new WaitForEndOfFrame();
             while (true)
             {
                 yield return new WaitForSeconds(SoundEmittingSettings.emitterTickLength);
-                yield return new WaitUntil(() => doDirect);
                 SelectClosestInteractable();
             }
         }
 
+        private bool TargetDotProductCheckSuccessful()
+        {
+            Vector3 interactableDirection = (closestInteractable.GetInteractableObject().position - transform.position).normalized;
+            float dotProduct = Vector3.Dot(interactableDirection, transform.forward);
+            if (dotProduct < dotProductMinimumForInteraction)
+                return false;
+            return true;
+        }
+
         private void SelectClosestInteractable()
         {
-            float smallestDistance = float.MaxValue;
+            float smallestSqrDistance = float.MaxValue;
             IInteractable newClosestInteractable = null;
+
             foreach (IInteractable interactable in interactableEmitters)
-            {
-                float distance = (interactable.GetInteractableObject().position - interactingObject.position).sqrMagnitude;
-                if (distance < smallestDistance)
-                {
-                    smallestDistance = distance;
-                    newClosestInteractable = interactable;
-                }
-            }
+                IsInteractableClosest(interactable, ref newClosestInteractable, ref smallestSqrDistance);
+
             closestInteractable = newClosestInteractable;
             if (closestInteractable is null)
             {
@@ -86,6 +90,32 @@ namespace Caeca.SoundControl
                 return;
             }
             SetNewTarget(closestInteractable.GetInteractableObject());
+        }
+
+        private bool IsInteractableClosest(IInteractable _interactable, ref IInteractable _newClosestInteractable, ref float _smallestSqrDistance)
+        {
+            if (_interactable.GetInteractableObject() is null)
+                return false;
+            float sgrDistance = (_interactable.GetInteractableObject().position - interactingObject.position).sqrMagnitude;
+            if (sgrDistance >= _smallestSqrDistance)
+                return false;
+            if (!RayCheckSuccessful(_interactable))
+                return false;
+
+            _smallestSqrDistance = sgrDistance;
+            _newClosestInteractable = _interactable;
+            return true;
+        }
+
+        private bool RayCheckSuccessful(IInteractable _interactable)
+        {
+            Vector3 interactableDirection = (_interactable.GetInteractableObject().position - transform.position).normalized;
+            Ray ray = new Ray(transform.position, interactableDirection);
+
+            if (Physics.Raycast(ray, out RaycastHit hit, 50, directLineOfSightLayerMask, QueryTriggerInteraction.Ignore))
+                if (hit.transform == _interactable.GetInteractableObject())
+                    return true;
+            return false;
         }
 
         private void SetNewTarget(Transform _newTarget)
@@ -100,8 +130,6 @@ namespace Caeca.SoundControl
             IInteractable newSound = _soundEmitter.GetEmmiter().GetComponent<IInteractable>();
             if (newSound is null)
                 return;
-            if (newSound == closestInteractable)
-                closestInteractable = null;
             interactableEmitters.Remove(newSound);
         }
 
@@ -111,6 +139,7 @@ namespace Caeca.SoundControl
             if (newSound is null)
                 return;
             interactableEmitters.Add(newSound);
+            SelectClosestInteractable();
         }
     }
 }

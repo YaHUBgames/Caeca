@@ -6,6 +6,6 @@ namespace Caeca.Interfaces
     {
         public Transform GetInteractableObject();
 
-        public bool Interact() { return false; }
+        public bool Interact(Transform _interactor) { return false; }
     }
 }

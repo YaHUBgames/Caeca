@@ -40,14 +40,13 @@ namespace Caeca.SoundControl.Managers
         private int assetTimer = 0;
 
 
-        public void Play(AssetReferenceAudioClip _clipReference, float _delay, bool _repeatable = false)
+        public void Play(AssetReferenceAudioClip _clipReference, float _delay, bool _repeatable = false, bool _rewritable = false)
         {
-            if (playedClipsReferences.Contains(_clipReference))
+            if (!_repeatable && playedClipsReferences.Contains(_clipReference))
                 return;
             if (!_repeatable)
                 playedClipsReferences.Add(_clipReference);
-
-            playQueue.Enqueue(new DelayClipEntry(_clipReference, _delay));
+            playQueue.Enqueue(new DelayClipEntry(_clipReference, _delay, _rewritable));
             if (playQueue.Count <= 1)
                 StartCoroutine(LoadAndPlaySound());
         }
@@ -67,17 +66,20 @@ namespace Caeca.SoundControl.Managers
                 assetTimer += Mathf.RoundToInt(clip.length) + 1;
 
                 audioSource.Play();
-                StartCoroutine(UnloadAsset());
+                StartCoroutine(UnloadAsset(thisClip.rewritable));
             };
         }
 
-        private IEnumerator UnloadAsset()
+        private IEnumerator UnloadAsset(bool _rewritable)
         {
             while (assetTimer > 0)
             {
                 yield return new WaitForSeconds(1);
+                if (_rewritable && playQueue.Count > 1)
+                    assetTimer = 1;
                 assetTimer--;
             }
+            audioSource.Stop();
             if (asyncOperation.IsValid())
                 Addressables.Release(asyncOperation);
 
@@ -89,12 +91,14 @@ namespace Caeca.SoundControl.Managers
 
     public class DelayClipEntry
     {
-        public DelayClipEntry(AssetReferenceAudioClip _clipReference, float _delay)
+        public DelayClipEntry(AssetReferenceAudioClip _clipReference, float _delay, bool _rewritable)
         {
             clipReference = _clipReference;
             delay = _delay;
+            rewritable = _rewritable;
         }
         public AssetReferenceAudioClip clipReference;
         public float delay;
+        public bool rewritable;
     }
 }

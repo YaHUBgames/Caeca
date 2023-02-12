@@ -707,6 +707,26 @@ MonoBehaviour:
     m_Address: Assets/Audio/Footsteps/WaterWalk/BetterWater/Splash Small 4.wav
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: a8004a1f546abad4e9bab980b2f777a0
+    m_Address: SFX/Speach/Tasks/BrokenLeg/Seashell
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 82e605633c84b2640a9080e605a5ae4e
+    m_Address: SFX/Speach/Tasks/BrokenLeg/Branch
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2357c9b2ab47ef3439a64ba4437cf3cd
+    m_Address: SFX/Speach/Tasks/BrokenLeg/Rock
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a289d2a357dc2604c9f09380b7746234
+    m_Address: SFX/Speach/Tasks/BrokenLeg/Crab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1866a84dcd2f35842b2507713fd67689
+    m_Address: SFX/Speach/Tasks/BrokenLeg/Complete
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 92a3f5c674b59a940a5ea730c8c2b1ea, type: 2}
   m_SchemaSet:
